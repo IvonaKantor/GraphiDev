@@ -5,10 +5,14 @@ html, body {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+}
 
+h1, p {
+    color: white;
+    font-family: Arial, sans-serif;
 }
 
 canvas {
     border: 1px solid white;
 }
-
