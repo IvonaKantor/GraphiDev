@@ -23,6 +23,7 @@ let actual_figure = getNextFigure();
 let gameOver = false;
 let clearedLines = 0;
 let fallSpeed = 0;
+let fallCounter = 0;
 
 function showHeader(text) {
     const obj_by_id = document.getElementById('header_text');
@@ -53,7 +54,7 @@ function place() {
     for (let i = 0; i < actual_figure.matrix.length; i++) {
         for (let j = 0; j < actual_figure.matrix[i].length; j++) {
             if (actual_figure.matrix[i][j]) {
-                field[actual_figure.row + i][actual_figure.col + i] = actual_figure.name;
+                field[actual_figure.row + i][actual_figure.col + j] = actual_figure.name;
             }
         }
     }
@@ -75,7 +76,7 @@ function deleteLine() {
         if (!field[row].includes(0)) {
             field.splice(row, 1);
             field.unshift(Array(10).fill(0));
-            document.getElementById('lines-cleared').textContent = `Lines Cleared: ${++linesCleared}`;
+            document.getElementById('lines-cleared').textContent = `Lines Cleared: ${++clearedLines}\n`;
             row++;
         }
     }
@@ -85,8 +86,9 @@ setTimeout(() => {
     showHeader('Tetromino');
 }, 1000);
 
-function main(){
+function main() {
     if (gameOver) return;
+
     context.clearRect(0, 0, canvas.width, canvas.height);
 
     for (let row = 0; row < 20; row++) {
@@ -97,4 +99,39 @@ function main(){
             }
         }
     }
+
+    fallCounter++;
+
+    if (fallCounter > 35) {
+        fallCounter = 0;
+        actual_figure.row++;
+
+        if (!checkPlacement(actual_figure.matrix, actual_figure.row, actual_figure.col)) {
+            actual_figure.row--;
+            place();
+        }
+    }
+    context.fillStyle = colors[actual_figure.name];
+
+    for (let r = 0; r < actual_figure.matrix.length; r++) {
+        for (let c = 0; c < actual_figure.matrix[r].length; c++) {
+            if (actual_figure.matrix[r][c]) {
+                context.fillRect(
+                    (actual_figure.col + c) * blockSize,
+                    (actual_figure.row + r) * blockSize,
+                    blockSize - 1,
+                    blockSize - 1
+                );
+            }
+        }
+    }
 }
+
+function gameLoop() {
+    main();
+    requestAnimationFrame(gameLoop);
+}
+
+gameLoop();
+
+document.addEventListener('keydown', (event) => {})
