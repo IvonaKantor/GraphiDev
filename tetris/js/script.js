@@ -52,6 +52,9 @@ function checkPlacement(matrix, row, col) {
 function place() {
 }
 
+function rotate() {
+}
+
 setTimeout(() => {
     showHeader('Tetromino');
 }, 1000);
