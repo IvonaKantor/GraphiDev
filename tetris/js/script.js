@@ -1,6 +1,6 @@
 const canvas = document.getElementById('game');
 const context = canvas.getContext('2d');
-const grid = 32;
+const blockSize = 32;
 const field = [];
 const figures = {
     'I': [[0, 0, 0, 0], [1, 1, 1, 1], [0, 0, 0, 0], [0, 0, 0, 0]],
