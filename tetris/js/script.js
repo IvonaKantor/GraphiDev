@@ -30,11 +30,13 @@ function showHeader(text) {
 }
 
 function getNextFigure() {
-    const key = Object.keys(figures);
-    const letter = key[Math.floor(Math.random() * key.length)];
+    const keys = Object.keys(figures);
+    const name = keys[Math.floor(Math.random() * keys.length)];
     return {
         name,
-        figures: [letter]
+        matrix: figures[name],
+        row: 0,
+        col: Math.floor(10 / 2) - Math.floor(figures[name][0].length / 2)
     };
 }
 
