@@ -50,14 +50,20 @@ function checkPlacement(matrix, row, col) {
 }
 
 function place() {
+    for(let i = 0; i < actual_figure.matrix.length; i++) {
+        for (let j = 0; j < actual_figure.matrix[i].length; j++) {
+            if (actual_figure.matrix[i][j]) {
+                field[actual_figure.row+i][actual_figure.col+i] = actual_figure.name;
+            }
+        }
+    }
+    deleteLine();
+    actual_figure = getNextFigure();
+    if(!checkPlacement(actual_figure.matrix, actual_figure.row, actual_figure.col, actual_figure.col)) {
+        gameOver = true;
+        showHeader('Game Over');
+    }
 }
-
-function rotate() {
-}
-
-setTimeout(() => {
-    showHeader('Tetromino');
-}, 1000);
 
 function deleteLine() {
     for (let row = 19; row >= 0; row--) {
@@ -69,3 +75,7 @@ function deleteLine() {
         }
     }
 }
+
+setTimeout(() => {
+    showHeader('Tetromino');
+}, 1000);
