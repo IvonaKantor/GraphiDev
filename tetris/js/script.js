@@ -84,3 +84,17 @@ function deleteLine() {
 setTimeout(() => {
     showHeader('Tetromino');
 }, 1000);
+
+function main(){
+    if (gameOver) return;
+    context.clearRect(0, 0, canvas.width, canvas.height);
+
+    for (let row = 0; row < 20; row++) {
+        for (let col = 0; col < 10; col++) {
+            if (field[row][col]) {
+                context.fillStyle = colors[field[row][col]];
+                context.fillRect(col * blockSize, row * blockSize, blockSize - 1, blockSize - 1);
+            }
+        }
+    }
+}
