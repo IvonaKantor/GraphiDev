@@ -65,6 +65,10 @@ function place() {
     }
 }
 
+function rotate(matrix) {
+    return matrix[0].map((_, i) => matrix.map(row => row[i])).reverse();
+}
+
 function deleteLine() {
     for (let row = 19; row >= 0; row--) {
         if (!field[row].includes(0)) {
