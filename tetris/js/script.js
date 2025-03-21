@@ -22,6 +22,7 @@ for (let i = 0; i < 20; i++) {
 let actual_figure = getNextFigure();
 let gameOver = false;
 let clearedLines = 0;
+let fallSpeed = 0;
 
 function showHeader(text) {
     const obj_by_id = document.getElementById('header_text');
@@ -40,6 +41,28 @@ function getNextFigure() {
     };
 }
 
+function checkPlacement(matrix, row, col) {
+    return matrix.every((r, i) =>
+        r.every((cell, j) =>
+            !cell || (field[row + i]?.[col + j] === 0 && row + i < 20 && col + j >= 0 && col + j < 10)
+        )
+    );
+}
+
+function place() {
+}
+
 setTimeout(() => {
     showHeader('Tetromino');
 }, 1000);
+
+function deleteLine() {
+    for (let row = 19; row >= 0; row--) {
+        if (!field[row].includes(0)) {
+            field.splice(row, 1);
+            field.unshift(Array(10).fill(0));
+            document.getElementById('lines-cleared').textContent = `Lines Cleared: ${++linesCleared}`;
+            row++;
+        }
+    }
+}
