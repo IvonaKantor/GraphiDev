@@ -14,3 +14,7 @@ const figures = {
 const colors = {
     'I': 'cyan', 'O': 'yellow', 'T': 'purple', 'S': 'green', 'Z': 'red', 'J': 'blue', 'L': 'orange'
 };
+
+for (let i = 0; i < 20; i++) {
+    field.push(new Array(10).fill(0));
+}
