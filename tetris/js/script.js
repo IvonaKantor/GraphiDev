@@ -23,6 +23,12 @@ let actual_figure = getNextFigure();
 let gameOver = false;
 let clearedLines = 0;
 
+function showHeader(text) {
+    const obj_by_id = document.getElementById('header_text');
+    obj_by_id.textContent = text;
+    obj_by_id.style.display = 'block';
+}
+
 function getNextFigure() {
     const key = Object.keys(figures);
     const letter = key[Math.floor(Math.random() * key.length)];
@@ -31,3 +37,7 @@ function getNextFigure() {
         figures: [letter]
     };
 }
+
+setTimeout(() => {
+    showHeader('Tetromino');
+}, 1000);
