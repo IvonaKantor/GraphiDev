@@ -18,3 +18,16 @@ const colors = {
 for (let i = 0; i < 20; i++) {
     field.push(new Array(10).fill(0));
 }
+
+let actual_figure = getNextFigure();
+let gameOver = false;
+let clearedLines = 0;
+
+function getNextFigure() {
+    const key = Object.keys(figures);
+    const letter = key[Math.floor(Math.random() * key.length)];
+    return {
+        name,
+        figures: [letter]
+    };
+}
