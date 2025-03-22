@@ -140,7 +140,8 @@ document.addEventListener('keydown', (e) => {
     const actions = {
         'ArrowLeft': () => actual_figure.col -= checkPlacement(actual_figure.matrix, actual_figure.row, actual_figure.col - 1) ? 1 : 0,
         'ArrowRight': () => actual_figure.col += checkPlacement(actual_figure.matrix, actual_figure.row, actual_figure.col + 1) ? 1 : 0,
-        'ArrowUp': () => actual_figure.matrix = checkPlacement(rotate(actual_figure.matrix), actual_figure.row, actual_figure.col) ? rotate(actual_figure.matrix) : actual_figure.matrix
+        'ArrowUp': () => actual_figure.matrix = checkPlacement(rotate(actual_figure.matrix), actual_figure.row, actual_figure.col) ? rotate(actual_figure.matrix) : actual_figure.matrix,
+        'ArrowDown': () => { if (checkPlacement(actual_figure.matrix, actual_figure.row + 1, actual_figure.col)) actual_figure.row++; else { place(); deleteLine(); } }
     };
     actions[e.key]?.();
 });
