@@ -22,7 +22,6 @@ for (let i = 0; i < 20; i++) {
 let actual_figure = getNextFigure();
 let gameOver = false;
 let clearedLines = 0;
-let fallSpeed = 0;
 let fallCounter = 0;
 
 function showHeader(text) {
@@ -134,4 +133,15 @@ function gameLoop() {
 
 gameLoop();
 
-document.addEventListener('keydown', (event) => {})
+document.addEventListener('keydown', handleKeyPress);
+
+function handleKeyPress(e) {
+    if (gameOver) return;
+
+    const moves = {
+        ArrowLeft: () => moveFigure(-1),
+        ArrowRight: () => moveFigure(1),
+        ArrowUp: rotateFigure,
+        ArrowDown: dropFigure
+    };
+}
