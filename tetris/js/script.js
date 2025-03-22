@@ -11,6 +11,7 @@ const figures = {
     'Z': [[1, 1, 0], [0, 1, 1], [0, 0, 0]],
     'T': [[0, 1, 0], [1, 1, 1], [0, 0, 0]]
 };
+
 const colors = {
     'I': 'cyan', 'O': 'yellow', 'T': 'purple', 'S': 'green', 'Z': 'red', 'J': 'blue', 'L': 'orange'
 };
