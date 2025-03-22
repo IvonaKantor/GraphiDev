@@ -133,15 +133,13 @@ function gameLoop() {
 
 gameLoop();
 
-document.addEventListener('keydown', handleKeyPress);
-
-function handleKeyPress(e) {
+document.addEventListener('keydown', (e) => {
     if (gameOver) return;
 
-    const moves = {
-        Left: () => moveFigure(-1),
-        Right: () => moveFigure(1),
-        Up: rotateFigure,
-        Down: dropFigure
+    const actions = {
+        'ArrowLeft': () => actual_figure.col -= checkPlacement(actual_figure.matrix, actual_figure.row, actual_figure.col - 1) ? 1 : 0,
+        'ArrowRight': () => actual_figure.col += checkPlacement(actual_figure.matrix, actual_figure.row, actual_figure.col + 1) ? 1 : 0,
+        'ArrowUp': () => actual_figure.matrix = checkPlacement(rotate(actual_figure.matrix), actual_figure.row, actual_figure.col) ? rotate(actual_figure.matrix) : actual_figure.matrix
     };
-}
+    actions[e.key]?.();
+});
