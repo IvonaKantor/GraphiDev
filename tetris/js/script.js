@@ -139,9 +139,9 @@ function handleKeyPress(e) {
     if (gameOver) return;
 
     const moves = {
-        ArrowLeft: () => moveFigure(-1),
-        ArrowRight: () => moveFigure(1),
-        ArrowUp: rotateFigure,
-        ArrowDown: dropFigure
+        Left: () => moveFigure(-1),
+        Right: () => moveFigure(1),
+        Up: rotateFigure,
+        Down: dropFigure
     };
 }
