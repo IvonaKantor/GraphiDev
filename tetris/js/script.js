@@ -84,6 +84,11 @@ function deleteLine() {
     }
 }
 
+function actualLevel(){
+    let elapsedTime = Math.floor((Date.now() - startTime) / 1000);
+    dropSpeed = Math.max(10, 35 - Math.floor(elapsedTime / 30) * 5);
+}
+
 setTimeout(() => {
     showHeader('Tetromino');
 }, 1000);
@@ -103,6 +108,7 @@ function main() {
     }
 
     fallCounter++;
+    actualLevel();
 
     if (fallCounter > 35) {
         fallCounter = 0;
