@@ -24,6 +24,8 @@ let actual_figure = getNextFigure();
 let gameOver = false;
 let clearedLines = 0;
 let fallCounter = 0;
+let dropSpeed = 35;
+let startTime = Date.now();
 
 function showHeader(text) {
     const obj_by_id = document.getElementById('header_text');
