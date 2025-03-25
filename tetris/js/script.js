@@ -84,18 +84,20 @@ function deleteLine() {
     }
 }
 
-function actualLevel(){
-    let elapsedTime = Math.floor((Date.now() - startTime) / 1000);
-    dropSpeed = Math.max(10, 35 - Math.floor(elapsedTime / 30) * 5);
-}
-
 setTimeout(() => {
     showHeader('Tetromino');
 }, 1000);
 
+function actualLevel(){
+    let level = Math.floor((Date.now() - startTime) / 30000) + 1;
+    dropSpeed = Math.max(10, 35 - (level - 1) * 5);
+    document.getElementById('difficulty-level').textContent = `Difficulty Level: ${level}`;
+}
+
+document.body.insertAdjacentHTML('beforeend', '<p id="difficulty-level">Difficulty Level: 1</p>');
+
 function main() {
     if (gameOver) return;
-
     context.clearRect(0, 0, canvas.width, canvas.height);
 
     for (let row = 0; row < 20; row++) {
@@ -110,7 +112,7 @@ function main() {
     fallCounter++;
     actualLevel();
 
-    if (fallCounter > 35) {
+    if (fallCounter > dropSpeed) {
         fallCounter = 0;
         actual_figure.row++;
 
