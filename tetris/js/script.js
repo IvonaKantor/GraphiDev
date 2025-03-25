@@ -88,7 +88,7 @@ setTimeout(() => {
     showHeader('Tetromino');
 }, 1000);
 
-function actualLevel(){
+function actualLevel() {
     let level = Math.floor((Date.now() - startTime) / 30000) + 1;
     dropSpeed = Math.max(10, 35 - (level - 1) * 5);
     document.getElementById('difficulty-level').textContent = `Difficulty Level: ${level}`;
@@ -151,7 +151,12 @@ document.addEventListener('keydown', (e) => {
         'ArrowLeft': () => actual_figure.col -= checkPlacement(actual_figure.matrix, actual_figure.row, actual_figure.col - 1) ? 1 : 0,
         'ArrowRight': () => actual_figure.col += checkPlacement(actual_figure.matrix, actual_figure.row, actual_figure.col + 1) ? 1 : 0,
         'ArrowUp': () => actual_figure.matrix = checkPlacement(rotate(actual_figure.matrix), actual_figure.row, actual_figure.col) ? rotate(actual_figure.matrix) : actual_figure.matrix,
-        'ArrowDown': () => { if (checkPlacement(actual_figure.matrix, actual_figure.row + 1, actual_figure.col)) actual_figure.row++; else { place(); deleteLine(); } }
+        'ArrowDown': () => {
+            if (checkPlacement(actual_figure.matrix, actual_figure.row + 1, actual_figure.col)) actual_figure.row++; else {
+                place();
+                deleteLine();
+            }
+        }
     };
     actions[e.key]?.();
 });
