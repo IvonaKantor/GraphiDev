@@ -74,12 +74,16 @@ function rotate(matrix) {
 }
 
 function deleteLine() {
+    const sound = document.getElementById('line-clear-sound');
+
     for (let row = 19; row >= 0; row--) {
         if (!field[row].includes(0)) {
             field.splice(row, 1);
             field.unshift(Array(10).fill(0));
             document.getElementById('lines-cleared').textContent = `Lines Cleared: ${++clearedLines}\n`;
             row++;
+
+            sound.play();
         }
     }
 }
