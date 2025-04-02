@@ -16,6 +16,11 @@ const colors = {
     'I': 'cyan', 'O': 'yellow', 'T': 'purple', 'S': 'green', 'Z': 'red', 'J': 'blue', 'L': 'orange'
 };
 
+const bgSound = document.getElementById('background-sound');
+bgSound.addEventListener('error', () => {
+    console.error("Error loading background sound");
+});
+
 for (let i = 0; i < 20; i++) {
     field.push(new Array(10).fill(0));
 }
@@ -26,6 +31,13 @@ let clearedLines = 0;
 let fallCounter = 0;
 let dropSpeed = 35;
 let startTime = Date.now();
+
+document.addEventListener('keydown', (e) => {
+    const bgSound = document.getElementById('background-sound');
+    if (['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'].includes(e.key)) {
+        bgSound.play().catch(e => console.error("Błąd odtwarzania:", e));
+    }
+}, { once: true });
 
 function showHeader(text) {
     const obj_by_id = document.getElementById('header_text');
