@@ -57,7 +57,16 @@ function getNextFigure() {
 }
 
 function checkPlacement(matrix, row, col) {
-    return matrix.every((r, i) =>()
+    return matrix.every((r, i) =>
+        r.every((cell, j) =>
+                !cell || (
+                    row + i >= 0 &&
+                    row + i < 20 &&
+                    col + j >= 0 &&
+                    col + j < 10 &&
+                    (row + i < 0 || field[row + i]?.[col + j] === 0)
+                )
+        )
     );
 }
 
