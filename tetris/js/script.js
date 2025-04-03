@@ -80,6 +80,8 @@ function place() {
         const gameOverSound = document.getElementById('game-over-sound');
         gameOverSound.play().catch(e => console.error("Playback error", e));
 
+        const bgSound = document.getElementById('background-sound');
+        bgSound.pause();
     }
 }
 
