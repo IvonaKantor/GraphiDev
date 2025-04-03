@@ -76,7 +76,8 @@ function place() {
             if (actual_figure.matrix[i][j]) {
                 if (actual_figure.row + i >= 0) {
                     field[actual_figure.row + i][actual_figure.col + j] = actual_figure.name;
-                }}
+                }
+            }
         }
     }
 
