@@ -76,6 +76,10 @@ function place() {
     if (!checkPlacement(actual_figure.matrix, actual_figure.row, actual_figure.col, actual_figure.col)) {
         gameOver = true;
         showHeader('Game Over');
+
+        const gameOverSound = document.getElementById('game-over-sound');
+        gameOverSound.play().catch(e => console.error("Playback error", e));
+
     }
 }
 
