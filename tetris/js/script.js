@@ -35,9 +35,9 @@ let startTime = Date.now();
 document.addEventListener('keydown', (e) => {
     const bgSound = document.getElementById('background-sound');
     if (['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'].includes(e.key)) {
-        bgSound.play().catch(e => console.error("Błąd odtwarzania:", e));
+        bgSound.play().catch(e => console.error("Playback error:", e));
     }
-}, { once: true });
+}, {once: true});
 
 function showHeader(text) {
     const obj_by_id = document.getElementById('header_text');
@@ -57,10 +57,7 @@ function getNextFigure() {
 }
 
 function checkPlacement(matrix, row, col) {
-    return matrix.every((r, i) =>
-        r.every((cell, j) =>
-            !cell || (field[row + i]?.[col + j] === 0 && row + i < 20 && col + j >= 0 && col + j < 10)
-        )
+    return matrix.every((r, i) =>()
     );
 }
 
@@ -68,13 +65,14 @@ function place() {
     for (let i = 0; i < actual_figure.matrix.length; i++) {
         for (let j = 0; j < actual_figure.matrix[i].length; j++) {
             if (actual_figure.matrix[i][j]) {
-                field[actual_figure.row + i][actual_figure.col + j] = actual_figure.name;
-            }
+                    field[actual_figure.row + i][actual_figure.col + j] = actual_figure.name;
+                }
         }
     }
 
     deleteLine();
     actual_figure = getNextFigure();
+
     if (!checkPlacement(actual_figure.matrix, actual_figure.row, actual_figure.col, actual_figure.col)) {
         gameOver = true;
         showHeader('Game Over');
