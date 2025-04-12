@@ -15,9 +15,9 @@ public class PowerTransform {
             for(int x = 0; x < width; x++) {
                 int rgb = inputImg.getRGB(x, y);
                 int alpha = (rgb >> 24) & 0xff;
-                int red = (rgb >> 16) & 0xff;
-                int green = (rgb >> 8) & 0xff;
-                int blue = rgb & 0xff;
+                int red = (int)Math.min(255,((rgb >> 16) & 0xff) * amount);
+                int green = (int)Math.min(255,((rgb >> 8) & 0xff)* amount);
+                int blue = (int)Math.min(255, (rgb & 0xff) * amount);
             }
         }
 
