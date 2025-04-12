@@ -6,4 +6,13 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 
 public class ImageManager {
+
+    public BufferedImage loadImage(String filename) {
+        try {
+            return ImageIO.read(new File(filename));
+        } catch (IOException e) {
+            System.out.println("Error loading image: " + e.getMessage());
+            return null;
+        }
+    }
 }
