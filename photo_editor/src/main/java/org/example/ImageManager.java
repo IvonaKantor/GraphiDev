@@ -15,4 +15,13 @@ public class ImageManager {
             return null;
         }
     }
+
+    public void saveImage(BufferedImage image, String filename) {
+        try{
+            ImageIO.write(image, "png", new File(filename));
+            System.out.println("Saved image to " + filename);
+        }catch(IOException e){
+            System.out.println("Error saving image" + e.getMessage());
+        }
+    }
 }
