@@ -11,6 +11,16 @@ public class PowerTransform {
         int height = inputImg.getHeight();
         BufferedImage outputImg = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
 
+        for(int y = 0; y < height; y++) {
+            for(int x = 0; x < width; x++) {
+                int rgb = inputImg.getRGB(x, y);
+                int alpha = (rgb >> 24) & 0xff;
+                int red = (rgb >> 16) & 0xff;
+                int green = (rgb >> 8) & 0xff;
+                int blue = rgb & 0xff;
+            }
+        }
+
     return outputImg;
     }
 
