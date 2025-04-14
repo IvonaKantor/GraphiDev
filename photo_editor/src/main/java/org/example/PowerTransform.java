@@ -35,7 +35,15 @@ public class PowerTransform {
         int height = inputImg.getHeight();
         BufferedImage outputImg = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
 
-        return outputImg;
+        for (int y = 0; y < height; y++) {
+        for (int x = 0; x < width; x++) {
+            int rgb = inputImg.getRGB(x, y);
+            double red = Math.pow(((rgb >> 16) & 0xFF) / 255.0, amount) * 255;
+            double green = Math.pow(((rgb >> 8) & 0xFF) / 255.0, amount) * 255;
+            double blue = Math.pow((rgb & 0xFF) / 255.0, amount) * 255;
+        }
     }
+        return outputImg;
+}
 }
 
