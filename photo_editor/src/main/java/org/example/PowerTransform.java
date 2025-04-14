@@ -38,7 +38,7 @@ public class PowerTransform {
         for (int y = 0; y < height; y++) {
         for (int x = 0; x < width; x++) {
             int rgb = inputImg.getRGB(x, y);
-            int alpha;
+            int alpha = (rgb >> 24) & 0xFF;
             double red = Math.pow(((rgb >> 16) & 0xFF) / 255.0, amount) * 255;
             double green = Math.pow(((rgb >> 8) & 0xFF) / 255.0, amount) * 255;
             double blue = Math.pow((rgb & 0xFF) / 255.0, amount) * 255;
