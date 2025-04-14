@@ -26,5 +26,7 @@ public class PowerTransform {
         }
         return outputImg;
     }
-}
+
+    public BufferedImage darken(BufferedImage inputImg, double amount) {
+    }
 
