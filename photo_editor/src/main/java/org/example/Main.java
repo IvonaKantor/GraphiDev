@@ -14,6 +14,7 @@ public class Main {
             if (image == null) {
                 System.out.println("No image found");
             }
+
         } catch (IOException e) {
             System.out.println("An error occurred while loading or saving an image: " + e.getMessage());
         }
