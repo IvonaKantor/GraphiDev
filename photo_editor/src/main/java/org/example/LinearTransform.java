@@ -58,6 +58,18 @@ public class LinearTransform {
         int height = inputImg.getHeight();
         BufferedImage outputImage = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
 
+        for (int y = 0; y < height; y++) {
+            for (int x = 0; x < width; x++) {
+                int rgb = inputImg.getRGB(x, y);
+                int alpha = (rgb >> 24) & 0xFF;
+                int red = 255 - ((rgb >> 16) & 0xFF);
+                int green = 255 - ((rgb >> 8) & 0xFF);
+                int blue = 255 - (rgb & 0xFF);
+
+                int newRgb = (alpha << 24) | (red << 16) | (green << 8) | blue;
+                outputImage.setRGB(x, y, newRgb);
+            }
+        }
         return outputImage;
     }
 }
