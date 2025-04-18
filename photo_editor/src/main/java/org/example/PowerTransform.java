@@ -36,14 +36,21 @@ public class PowerTransform {
         BufferedImage outputImg = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
 
         for (int y = 0; y < height; y++) {
-        for (int x = 0; x < width; x++) {
-            int rgb = inputImg.getRGB(x, y);
-            int alpha = (rgb >> 24) & 0xFF;
-            double red = Math.pow(((rgb >> 16) & 0xFF) / 255.0, amount) * 255;
-            double green = Math.pow(((rgb >> 8) & 0xFF) / 255.0, amount) * 255;
-            double blue = Math.pow((rgb & 0xFF) / 255.0, amount) * 255;
+            for (int x = 0; x < width; x++) {
+                int rgb = inputImg.getRGB(x, y);
+                int alpha = (rgb >> 24) & 0xFF;
+                double red = Math.pow(((rgb >> 16) & 0xFF) / 255.0, amount) * 255;
+                double green = Math.pow(((rgb >> 8) & 0xFF) / 255.0, amount) * 255;
+                double blue = Math.pow((rgb & 0xFF) / 255.0, amount) * 255;
+
+                int newRed = (int) Math.min(255, Math.max(0, red));
+                int newGreen = (int) Math.min(255, Math.max(0, green));
+                int newBlue = (int) Math.min(255, Math.max(0, blue));
+
+                int newRgb = (alpha << 24) | (newRed << 16) | (newGreen << 8) | newBlue;
+                outputImg.setRGB(x, y, newRgb);
+            }
         }
-    }
         return outputImg;
-}
+    }
 }
