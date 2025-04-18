@@ -49,4 +49,7 @@ public class LinearTransform {
         }
         return outputImage;
     }
+
+    public BufferedImage negative(BufferedImage inputImg) {
+    }
 }
