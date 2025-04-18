@@ -51,5 +51,8 @@ public class LinearTransform {
     }
 
     public BufferedImage negative(BufferedImage inputImg) {
+        if (inputImg == null) {
+            return null;
+        }
     }
 }
