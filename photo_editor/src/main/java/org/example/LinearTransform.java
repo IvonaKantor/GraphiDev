@@ -54,5 +54,10 @@ public class LinearTransform {
         if (inputImg == null) {
             return null;
         }
+        int width = inputImg.getWidth();
+        int height = inputImg.getHeight();
+        BufferedImage outputImage = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
+
+        return outputImage;
     }
 }
