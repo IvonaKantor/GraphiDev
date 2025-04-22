@@ -15,6 +15,9 @@ public class Main {
                 System.out.println("No image found");
             }
 
+            assert image != null;
+            BufferedImage brightened = LinearTransform.brighten(image, 1.2,0);
+
         } catch (IOException e) {
             System.out.println("An error occurred while loading or saving an image: " + e.getMessage());
         }
