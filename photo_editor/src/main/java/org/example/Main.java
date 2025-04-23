@@ -9,14 +9,14 @@ public class Main {
     public static void main(String[] args) {
         try {
             File inputFile = new File("image.png");
-            BufferedImage image = ImageIO.read(inputFile);
+            BufferedImage originalImage = ImageIO.read(inputFile);
 
-            if (image == null) {
-                System.out.println("No image found");
+            if (originalImage != null) {
+                BufferedImage brightenedImage = LinearTransform.brighten(originalImage, 1.2);
+
+            } else {
+                System.out.println("Failed to load the image.");
             }
-
-            assert image != null;
-            BufferedImage brightened = LinearTransform.brighten(image, 1.2,0);
 
         } catch (IOException e) {
             System.out.println("An error occurred while loading or saving an image: " + e.getMessage());
