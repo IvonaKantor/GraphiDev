@@ -23,6 +23,11 @@ public class Main {
                 ImageIO.write(darkenedImage, "png", darkenedFile);
                 System.out.println("Image darkened and saved as darkened_image.png");
 
+                BufferedImage negativeImage = linearTransform.negative(originalImage);
+                File negativeFile = new File("negative_image.png");
+                ImageIO.write(negativeImage, "png", negativeFile);
+                System.out.println("Negative of the image saved as negative_image.png");
+
             } else {
                 System.out.println("Failed to load the image.");
             }
