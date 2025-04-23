@@ -13,9 +13,9 @@ public class Main {
 
             if (originalImage != null) {
                 BufferedImage brightenedImage = LinearTransform.brighten(originalImage, 1.2);
-                File brightenedFile = new File("bright_img.png");
+                File brightenedFile = new File("brightened_image.png");
                 ImageIO.write(brightenedImage, "png", brightenedFile);
-                System.out.println("Image brightened and saved as bright_img.png");
+                System.out.println("Image brightened and saved as brightened_image.png");
 
             } else {
                 System.out.println("Failed to load the image.");
