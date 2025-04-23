@@ -4,7 +4,7 @@ import java.awt.image.BufferedImage;
 
 public class LinearTransform {
 
-    public static BufferedImage brighten(BufferedImage inputImg, double amount, int i) {
+    public static BufferedImage brighten(BufferedImage inputImg, double amount) {
 
         if (inputImg == null) {
             return null;
