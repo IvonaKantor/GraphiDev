@@ -17,6 +17,12 @@ public class Main {
                 ImageIO.write(brightenedImage, "png", brightenedFile);
                 System.out.println("Image brightened and saved as brightened_image.png");
 
+                LinearTransform linearTransform = new LinearTransform();
+                BufferedImage darkenedImage = linearTransform.darken(originalImage, 0.8);
+                File darkenedFile = new File("darkened_image.png");
+                ImageIO.write(darkenedImage, "png", darkenedFile);
+                System.out.println("Image darkened and saved as darkened_image.png");
+
             } else {
                 System.out.println("Failed to load the image.");
             }
