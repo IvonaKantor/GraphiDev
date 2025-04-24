@@ -17,10 +17,10 @@ public class ImageManager {
     }
 
     public void saveImage(BufferedImage image, String filename) {
-        try{
+        try {
             ImageIO.write(image, "png", new File(filename));
             System.out.println("Saved image to " + filename);
-        }catch(IOException e){
+        } catch (IOException e) {
             System.out.println("Error saving image" + e.getMessage());
         }
     }
