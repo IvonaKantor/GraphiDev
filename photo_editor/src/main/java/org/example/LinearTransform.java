@@ -13,18 +13,15 @@ public class LinearTransform {
 
         int width = inputImg.getWidth();
         int height = inputImg.getHeight();
-        BufferedImage outputImg = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
+        BufferedImage outputImg = new BufferedImage(width, height, inputImg.getType());
 
         for (int y = 0; y < height; y++) {
             for (int x = 0; x < width; x++) {
-                int rgb = inputImg.getRGB(x, y);
-                int alpha = (rgb >> 24) & 0xFF;
-                int red = (int) Math.min(255, ((rgb >> 16) & 0xFF) * amount);
-                int green = (int) Math.min(255, ((rgb >> 8) & 0xFF) * amount);
-                int blue = (int) Math.min(255, (rgb & 0xFF) * amount);
-
-                int newColor = (alpha << 24) | (red << 16) | (green << 8) | blue;
-                outputImg.setRGB(x, y, newColor);
+                Color color = new Color(inputImg.getRGB(x, y));
+                int red = (int) Math.min(255, color.getRed() + amount);
+                int green = (int) Math.min(255, color.getGreen() + amount);
+                int blue = (int) Math.min(255, color.getBlue() + amount);
+                outputImg.setRGB(x, y, new Color(red, green, blue).getRGB());
             }
         }
         return outputImg;
