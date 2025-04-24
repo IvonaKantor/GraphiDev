@@ -44,7 +44,7 @@ public class LinearTransform {
                 outputImage.setRGB(x, y, new Color(red, green, blue).getRGB());
             }
         }
-        return null;
+        return outputImage;
     }
 
     public BufferedImage negative(BufferedImage inputImg) {
