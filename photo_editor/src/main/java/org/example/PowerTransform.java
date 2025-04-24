@@ -1,56 +1,24 @@
 package org.example;
 
+import java.awt.Color;
 import java.awt.image.BufferedImage;
 
 public class PowerTransform {
-    public BufferedImage brighten(BufferedImage inputImg, double amount) {
-
-        if (inputImg == null)
-            return null;
-
-        int width = inputImg.getWidth();
-        int height = inputImg.getHeight();
-        BufferedImage outputImg = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
+    public static BufferedImage powerTransform(BufferedImage inputImage, double gamma) {
+        int width = inputImage.getWidth();
+        int height = inputImage.getHeight();
+        BufferedImage outputImage = new BufferedImage(width, height, inputImage.getType());
+        double c = 255.0;
 
         for (int y = 0; y < height; y++) {
             for (int x = 0; x < width; x++) {
-                int rgb = inputImg.getRGB(x, y);
-                int alpha = (rgb >> 24) & 0xff;
-                int red = (int) Math.min(255, ((rgb >> 16) & 0xff) * amount);
-                int green = (int) Math.min(255, ((rgb >> 8) & 0xff) * amount);
-                int blue = (int) Math.min(255, (rgb & 0xff) * amount);
-
-                int newColor = (alpha << 24) | (red << 16) | (green << 8) | blue;
-                outputImg.setRGB(x, y, newColor);
+                Color color = new Color(inputImage.getRGB(x, y));
+                int red = (int) Math.min(255, c * Math.pow(color.getRed() / 255.0, gamma));
+                int green = (int) Math.min(255, c * Math.pow(color.getGreen() / 255.0, gamma));
+                int blue = (int) Math.min(255, c * Math.pow(color.getBlue() / 255.0, gamma));
+                outputImage.setRGB(x, y, new Color(red, green, blue).getRGB());
             }
         }
-        return outputImg;
-    }
-
-    public BufferedImage darken(BufferedImage inputImg, double amount) {
-        if (inputImg == null) {
-            return null;
-        }
-        int width = inputImg.getWidth();
-        int height = inputImg.getHeight();
-        BufferedImage outputImg = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
-
-        for (int y = 0; y < height; y++) {
-            for (int x = 0; x < width; x++) {
-                int rgb = inputImg.getRGB(x, y);
-                int alpha = (rgb >> 24) & 0xFF;
-                double red = Math.pow(((rgb >> 16) & 0xFF) / 255.0, amount) * 255;
-                double green = Math.pow(((rgb >> 8) & 0xFF) / 255.0, amount) * 255;
-                double blue = Math.pow((rgb & 0xFF) / 255.0, amount) * 255;
-
-                int newRed = (int) Math.min(255, Math.max(0, red));
-                int newGreen = (int) Math.min(255, Math.max(0, green));
-                int newBlue = (int) Math.min(255, Math.max(0, blue));
-
-                int newRgb = (alpha << 24) | (newRed << 16) | (newGreen << 8) | newBlue;
-                outputImg.setRGB(x, y, newRgb);
-            }
-        }
-        return outputImg;
+        return outputImage;
     }
 }
