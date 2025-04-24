@@ -25,4 +25,8 @@ public class PowerTransform {
     public static BufferedImage brightenPower(BufferedImage inputImage, double gamma) {
         return powerTransform(inputImage, gamma);
     }
+
+    public static BufferedImage darkenPower(BufferedImage inputImage, double gamma) {
+        return powerTransform(inputImage, gamma);
+    }
 }
