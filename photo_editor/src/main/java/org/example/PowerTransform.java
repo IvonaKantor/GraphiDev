@@ -21,4 +21,8 @@ public class PowerTransform {
         }
         return outputImage;
     }
+
+    public static BufferedImage brightenPower(BufferedImage inputImage, double gamma) {
+        return powerTransform(inputImage, gamma);
+    }
 }
