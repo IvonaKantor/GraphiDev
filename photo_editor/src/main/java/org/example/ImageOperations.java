@@ -2,12 +2,17 @@ package org.example;
 
 import javax.swing.*;
 import javax.imageio.ImageIO;
-import java.awt.*;
 import java.awt.image.*;
-import java.io.File;
 import java.io.IOException;
 
 public class ImageOperations {
+    public void openFirstImage(ImagePanel panel) {
+        openImage(panel, true);
+    }
+
+    public void openSecondImage(ImagePanel panel) {
+        openImage(panel, false);
+    }
 
     private void openImage(ImagePanel panel, boolean isFirst) {
         JFileChooser fileChooser = new JFileChooser();
@@ -20,8 +25,12 @@ public class ImageOperations {
                     panel.setSecondImage(image);
                 }
             } catch (IOException e) {
-                showError("Błąd wczytywania obrazu");
+                showError();
             }
         }
+    }
+
+    private void showError() {
+        JOptionPane.showMessageDialog(null, "Error with opening an image", "Error", JOptionPane.ERROR_MESSAGE);
     }
 }
