@@ -71,4 +71,12 @@ public class ImageOperations {
         BufferedImage blended = ImageTransforms.blendImages(img1, img2, blendMode, alpha);
         panel.setFirstImage(blended);
     }
+
+    private int clamp(int value) {
+        return Math.max(0, Math.min(255, value));
+    }
+
+    private void showError(String message) {
+        JOptionPane.showMessageDialog(null, message, "Error", JOptionPane.ERROR_MESSAGE);
+    }
 }
