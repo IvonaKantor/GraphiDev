@@ -72,6 +72,11 @@ public class ImageOperations {
         panel.setFirstImage(blended);
     }
 
+    private BufferedImage blur(BufferedImage image) {
+
+    }
+
+
     private int clamp(int value) {
         return Math.max(0, Math.min(255, value));
     }
