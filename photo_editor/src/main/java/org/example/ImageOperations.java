@@ -72,6 +72,7 @@ public class ImageOperations {
         panel.setFirstImage(blended);
     }
 
+
     private BufferedImage blur(BufferedImage image) {
         BufferedImage result = new BufferedImage(image.getWidth(), image.getHeight(), image.getType());
 
