@@ -156,6 +156,21 @@ public class ImageOperations {
         panel.setSelectedImage(result);
     }
 
+    private BufferedImage Sepia(BufferedImage original) {
+        BufferedImage result = new BufferedImage(original.getWidth(), original.getHeight(), original.getType());
+
+        for (int y = 0; y < original.getHeight(); y++) {
+            for (int x = 0; x < original.getWidth(); x++) {
+                Color color = new Color(original.getRGB(x, y));
+                int r = (int) (color.getRed() * 0.393 + color.getGreen() * 0.769 + color.getBlue() * 0.189);
+                int g = (int) (color.getRed() * 0.349 + color.getGreen() * 0.686 + color.getBlue() * 0.168);
+                int b = (int) (color.getRed() * 0.272 + color.getGreen() * 0.534 + color.getBlue() * 0.131);
+                result.setRGB(x, y, new Color(clamp(r), clamp(g), clamp(b)).getRGB());
+            }
+        }
+        return result;
+    }
+
     private BufferedImage blur(BufferedImage image) {
         BufferedImage result = new BufferedImage(image.getWidth(), image.getHeight(), image.getType());
 
