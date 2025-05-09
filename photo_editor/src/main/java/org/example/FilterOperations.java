@@ -6,6 +6,15 @@ import java.util.Arrays;
 
 public class FilterOperations {
 
+    public static BufferedImage applyLaplaceFilter(BufferedImage original) {
+        double[][] kernel = {
+                {0, -1, 0},
+                {-1, 4, -1},
+                {0, -1, 0}
+        };
+        return applyKernel(original, kernel);
+    }
+
     public static BufferedImage applyMinFilter(BufferedImage original) {
         BufferedImage result = ImageTransforms.copyImage(original);
 
