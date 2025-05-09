@@ -6,6 +6,52 @@ import java.util.Arrays;
 
 public class FilterOperations {
 
+    public static BufferedImage applyMinFilter(BufferedImage original) {
+        BufferedImage result = ImageTransforms.copyImage(original);
+
+        for (int y = 1; y < original.getHeight() - 1; y++) {
+            for (int x = 1; x < original.getWidth() - 1; x++) {
+                int minRed = 255, minGreen = 255, minBlue = 255;
+
+                for (int ky = -1; ky <= 1; ky++) {
+                    for (int kx = -1; kx <= 1; kx++) {
+                        Color color = new Color(original.getRGB(x + kx, y + ky));
+                        minRed = Math.min(minRed, color.getRed());
+                        minGreen = Math.min(minGreen, color.getGreen());
+                        minBlue = Math.min(minBlue, color.getBlue());
+                    }
+                }
+
+                result.setRGB(x, y, new Color(minRed, minGreen, minBlue).getRGB());
+            }
+        }
+
+        return result;
+    }
+
+    public static BufferedImage applyMaxFilter(BufferedImage original) {
+        BufferedImage result = ImageTransforms.copyImage(original);
+
+        for (int y = 1; y < original.getHeight() - 1; y++) {
+            for (int x = 1; x < original.getWidth() - 1; x++) {
+                int maxRed = 0, maxGreen = 0, maxBlue = 0;
+
+                for (int ky = -1; ky <= 1; ky++) {
+                    for (int kx = -1; kx <= 1; kx++) {
+                        Color color = new Color(original.getRGB(x + kx, y + ky));
+                        maxRed = Math.max(maxRed, color.getRed());
+                        maxGreen = Math.max(maxGreen, color.getGreen());
+                        maxBlue = Math.max(maxBlue, color.getBlue());
+                    }
+                }
+
+                result.setRGB(x, y, new Color(maxRed, maxGreen, maxBlue).getRGB());
+            }
+        }
+
+        return result;
+    }
+
     public static BufferedImage applyMedianFilter(BufferedImage original) {
         BufferedImage result = ImageTransforms.copyImage(original);
 
