@@ -72,27 +72,88 @@ public class ImageOperations {
         panel.setFirstImage(blended);
     }
 
-
-    private BufferedImage blur(BufferedImage image) {
-        BufferedImage result = new BufferedImage(image.getWidth(), image.getHeight(), image.getType());
-
-        for (int y = 1; y < image.getHeight() - 1; y++) {
-            for (int x = 1; x < image.getWidth() - 1; x++) {
-                int r = 0, g = 0, b = 0;
-
-                for (int ky = -1; ky <= 1; ky++) {
-                    for (int kx = -1; kx <= 1; kx++) {
-                        Color color = new Color(image.getRGB(x + kx, y + ky));
-                        r += color.getRed();
-                        g += color.getGreen();
-                        b += color.getBlue();
-                    }
-                }
-
-                result.setRGB(x, y, new Color(r / 9, g / 9, b / 9).getRGB());
-            }
+    public void applyOperation(String operation, ImagePanel panel, JSlider slider) {
+        BufferedImage image = panel.getSelectedImage();
+        if (image == null) {
+            showError("Select Image Before Applying the Action");
+            return;
         }
-        return result;
+
+        BufferedImage result;
+        double param = slider.getValue() / 100.0;
+
+        switch (operation) {
+            case "Brightening":
+                result = adjustBrightness(image, 1.0 + param);
+                break;
+            case "Darkening":
+                result = adjustBrightness(image, 1.0 - param);
+                break;
+            case "Power Transform (Brightening)":
+                result = ImageTransforms.powerTransform(image, 1.0 - param);
+                break;
+            case "Power Transform (Darkening)":
+                result = ImageTransforms.powerTransform(image, 1.0 + param);
+                break;
+            case "Negative":
+                result = negative(image);
+                break;
+            case "Contrast":
+                result = adjustContrast(image, param * 3);
+                break;
+            case "Gauss filter":
+                result = Gauss(image);
+                break;
+            case "Edge detection":
+                result = calculateEdges(image);
+                break;
+            case "Thresholding":
+                result = threshold(image, (int) (param * 255));
+                break;
+            case "Sepia":
+                result = Sepia(image);
+                break;
+            case "Blur":
+                result = blur(image);
+                break;
+            case "Generate RGB Histogram":
+                result = HistogramOperations.generateHistogram(image);
+                break;
+            case "Equalize Histogram":
+                result = HistogramOperations.equalizeHistogram(image);
+                break;
+            case "Scale Histogram":
+                result = HistogramOperations.scaleHistogram(image);
+                break;
+            case "Low-pass Filter":
+                result = FilterOperations.applyLowPassFilter(image);
+                break;
+            case "Roberts Filter":
+                result = FilterOperations.applyRobertsFilter(image);
+                break;
+            case "Prewitt Filter":
+                result = FilterOperations.applyPrewittFilter(image);
+                break;
+            case "Sobel Filter":
+                result = FilterOperations.applySobelFilter(image);
+                break;
+            case "Laplace Filter":
+                result = FilterOperations.applyLaplaceFilter(image);
+                break;
+            case "Min Filter":
+                result = FilterOperations.applyMinFilter(image);
+                break;
+            case "Max Filter":
+                result = FilterOperations.applyMaxFilter(image);
+                break;
+            case "Median Filter":
+                result = FilterOperations.applyMedianFilter(image);
+                break;
+            default:
+                return;
+        }
+
+        panel.setSelectedImage(result);
     }
 
 
