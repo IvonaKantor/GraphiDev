@@ -156,6 +156,10 @@ public class ImageOperations {
         panel.setSelectedImage(result);
     }
 
+    private BufferedImage negative(BufferedImage original) {
+        return ImageTransforms.negative(original);
+    }
+
     private BufferedImage adjustContrast(BufferedImage original, double contrast) {
         return ImageTransforms.adjustContrast(original, contrast);
     }
