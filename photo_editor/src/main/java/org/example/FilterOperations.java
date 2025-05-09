@@ -5,6 +5,14 @@ import java.awt.Color;
 import java.util.Arrays;
 
 public class FilterOperations {
+    public static BufferedImage applyLowPassFilter(BufferedImage original) {
+        double[][] kernel = {
+                {1 / 9.0, 1 / 9.0, 1 / 9.0},
+                {1 / 9.0, 1 / 9.0, 1 / 9.0},
+                {1 / 9.0, 1 / 9.0, 1 / 9.0}
+        };
+        return applyKernel(original, kernel);
+    }
 
     public static BufferedImage applyRobertsFilter(BufferedImage original) {
         double[][] kernelX = {
