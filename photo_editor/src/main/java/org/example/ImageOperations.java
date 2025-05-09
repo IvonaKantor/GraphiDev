@@ -156,6 +156,10 @@ public class ImageOperations {
         panel.setSelectedImage(result);
     }
 
+    private BufferedImage adjustBrightness(BufferedImage original, double factor) {
+        return ImageTransforms.linearBrightness(original, factor);
+    }
+
     private BufferedImage negative(BufferedImage original) {
         return ImageTransforms.negative(original);
     }
