@@ -6,6 +6,54 @@ import java.util.Arrays;
 
 public class FilterOperations {
 
+    public static BufferedImage applyRobertsFilter(BufferedImage original) {
+        double[][] kernelX = {
+                {0, 0, 0},
+                {0, 1, 0},
+                {0, 0, -1}
+        };
+
+        double[][] kernelY = {
+                {0, 0, 0},
+                {0, 0, 1},
+                {0, -1, 0}
+        };
+
+        return applyEdgeDetection(original, kernelX, kernelY);
+    }
+
+    public static BufferedImage applyPrewittFilter(BufferedImage original) {
+        double[][] kernelX = {
+                {-1, 0, 1},
+                {-1, 0, 1},
+                {-1, 0, 1}
+        };
+
+        double[][] kernelY = {
+                {-1, -1, -1},
+                {0, 0, 0},
+                {1, 1, 1}
+        };
+
+        return applyEdgeDetection(original, kernelX, kernelY);
+    }
+
+    public static BufferedImage applySobelFilter(BufferedImage original) {
+        double[][] kernelX = {
+                {-1, 0, 1},
+                {-2, 0, 2},
+                {-1, 0, 1}
+        };
+
+        double[][] kernelY = {
+                {-1, -2, -1},
+                {0, 0, 0},
+                {1, 2, 1}
+        };
+
+        return applyEdgeDetection(original, kernelX, kernelY);
+    }
+
     public static BufferedImage applyLaplaceFilter(BufferedImage original) {
         double[][] kernel = {
                 {0, -1, 0},
