@@ -156,6 +156,10 @@ public class ImageOperations {
         panel.setSelectedImage(result);
     }
 
+    private BufferedImage adjustContrast(BufferedImage original, double contrast) {
+        return ImageTransforms.adjustContrast(original, contrast);
+    }
+
     private BufferedImage Gauss(BufferedImage original) {
         float[] matrix = {
                 1 / 16f, 2 / 16f, 1 / 16f,
