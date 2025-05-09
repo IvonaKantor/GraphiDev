@@ -156,6 +156,19 @@ public class ImageOperations {
         panel.setSelectedImage(result);
     }
 
+    private BufferedImage threshold(BufferedImage original, int threshold) {
+        BufferedImage result = new BufferedImage(original.getWidth(), original.getHeight(), BufferedImage.TYPE_BYTE_BINARY);
+
+        for (int y = 0; y < original.getHeight(); y++) {
+            for (int x = 0; x < original.getWidth(); x++) {
+                Color color = new Color(original.getRGB(x, y));
+                int gray = (color.getRed() + color.getGreen() + color.getBlue()) / 3;
+                result.setRGB(x, y, gray > threshold ? Color.WHITE.getRGB() : Color.BLACK.getRGB());
+            }
+        }
+        return result;
+    }
+
     private BufferedImage Sepia(BufferedImage original) {
         BufferedImage result = new BufferedImage(original.getWidth(), original.getHeight(), original.getType());
 
