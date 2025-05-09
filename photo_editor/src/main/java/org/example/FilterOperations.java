@@ -6,6 +6,37 @@ import java.util.Arrays;
 
 public class FilterOperations {
 
+    public static BufferedImage applyMedianFilter(BufferedImage original) {
+        BufferedImage result = ImageTransforms.copyImage(original);
+
+        for (int y = 1; y < original.getHeight() - 1; y++) {
+            for (int x = 1; x < original.getWidth() - 1; x++) {
+                int[] reds = new int[9];
+                int[] greens = new int[9];
+                int[] blues = new int[9];
+                int i = 0;
+
+                for (int ky = -1; ky <= 1; ky++) {
+                    for (int kx = -1; kx <= 1; kx++) {
+                        Color color = new Color(original.getRGB(x + kx, y + ky));
+                        reds[i] = color.getRed();
+                        greens[i] = color.getGreen();
+                        blues[i] = color.getBlue();
+                        i++;
+                    }
+                }
+
+                Arrays.sort(reds);
+                Arrays.sort(greens);
+                Arrays.sort(blues);
+
+                result.setRGB(x, y, new Color(reds[4], greens[4], blues[4]).getRGB());
+            }
+        }
+
+        return result;
+    }
+
     private static BufferedImage applyKernel(BufferedImage original, double[][] kernel) {
         BufferedImage result = ImageTransforms.copyImage(original);
 
