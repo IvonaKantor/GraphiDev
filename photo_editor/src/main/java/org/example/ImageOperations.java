@@ -156,6 +156,14 @@ public class ImageOperations {
         panel.setSelectedImage(result);
     }
 
+    private BufferedImage applyConvolutionFilter(BufferedImage original, float[] matrix) {
+        BufferedImage result = new BufferedImage(original.getWidth(), original.getHeight(), original.getType());
+        Kernel kernel = new Kernel(3, 3, matrix);
+        ConvolveOp op = new ConvolveOp(kernel);
+        op.filter(original, result);
+        return result;
+    }
+
     private BufferedImage threshold(BufferedImage original, int threshold) {
         BufferedImage result = new BufferedImage(original.getWidth(), original.getHeight(), BufferedImage.TYPE_BYTE_BINARY);
 
