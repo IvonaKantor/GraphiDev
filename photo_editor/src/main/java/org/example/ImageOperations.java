@@ -156,6 +156,15 @@ public class ImageOperations {
         panel.setSelectedImage(result);
     }
 
+    private BufferedImage calculateEdges(BufferedImage original) {
+        float[] matrix = {
+                -1, -1, -1,
+                -1, 8, -1,
+                -1, -1, -1
+        };
+        return applyConvolutionFilter(original, matrix);
+    }
+
     private BufferedImage applyConvolutionFilter(BufferedImage original, float[] matrix) {
         BufferedImage result = new BufferedImage(original.getWidth(), original.getHeight(), original.getType());
         Kernel kernel = new Kernel(3, 3, matrix);
