@@ -156,6 +156,15 @@ public class ImageOperations {
         panel.setSelectedImage(result);
     }
 
+    private BufferedImage Gauss(BufferedImage original) {
+        float[] matrix = {
+                1 / 16f, 2 / 16f, 1 / 16f,
+                2 / 16f, 4 / 16f, 2 / 16f,
+                1 / 16f, 2 / 16f, 1 / 16f
+        };
+        return applyConvolutionFilter(original, matrix);
+    }
+
     private BufferedImage calculateEdges(BufferedImage original) {
         float[] matrix = {
                 -1, -1, -1,
