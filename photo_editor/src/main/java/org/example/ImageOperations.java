@@ -156,6 +156,27 @@ public class ImageOperations {
         panel.setSelectedImage(result);
     }
 
+    private BufferedImage blur(BufferedImage image) {
+        BufferedImage result = new BufferedImage(image.getWidth(), image.getHeight(), image.getType());
+
+        for (int y = 1; y < image.getHeight() - 1; y++) {
+            for (int x = 1; x < image.getWidth() - 1; x++) {
+                int r = 0, g = 0, b = 0;
+
+                for (int ky = -1; ky <= 1; ky++) {
+                    for (int kx = -1; kx <= 1; kx++) {
+                        Color color = new Color(image.getRGB(x + kx, y + ky));
+                        r += color.getRed();
+                        g += color.getGreen();
+                        b += color.getBlue();
+                    }
+                }
+
+                result.setRGB(x, y, new Color(r / 9, g / 9, b / 9).getRGB());
+            }
+        }
+        return result;
+    }
 
     private int clamp(int value) {
         return Math.max(0, Math.min(255, value));
