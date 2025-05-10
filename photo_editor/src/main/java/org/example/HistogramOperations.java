@@ -29,7 +29,27 @@ public class HistogramOperations {
                 histWidth * 3, histHeight, BufferedImage.TYPE_INT_RGB);
         Graphics2D g2d = histImage.createGraphics();
 
+        g2d.setColor(Color.WHITE);
+        g2d.fillRect(0, 0, histWidth * 3, histHeight);
 
+        g2d.setColor(Color.RED);
+        drawHistogram(g2d, redHist, maxRed, 0, histWidth, histHeight);
+
+        g2d.setColor(Color.GREEN);
+        drawHistogram(g2d, greenHist, maxGreen, histWidth, histWidth, histHeight);
+
+        g2d.setColor(Color.BLUE);
+        drawHistogram(g2d, blueHist, maxBlue, histWidth * 2, histWidth, histHeight);
+
+        g2d.dispose();
         return histImage;
+    }
+
+    private static void drawHistogram(Graphics2D g2d, int[] hist, int max,
+                                      int xOffset, int width, int height) {
+        for (int i = 0; i < width; i++) {
+            int value = (int)((double)hist[i] / max * height);
+            g2d.drawLine(i + xOffset, height, i + xOffset, height - value);
+        }
     }
 }
