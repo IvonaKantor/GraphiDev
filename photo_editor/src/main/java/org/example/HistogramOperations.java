@@ -22,5 +22,14 @@ public class HistogramOperations {
         int maxRed = Arrays.stream(redHist).max().getAsInt();
         int maxGreen = Arrays.stream(greenHist).max().getAsInt();
         int maxBlue = Arrays.stream(blueHist).max().getAsInt();
+
+        int histWidth = 256;
+        int histHeight = 100;
+        BufferedImage histImage = new BufferedImage(
+                histWidth * 3, histHeight, BufferedImage.TYPE_INT_RGB);
+        Graphics2D g2d = histImage.createGraphics();
+
+
+        return histImage;
     }
 }
