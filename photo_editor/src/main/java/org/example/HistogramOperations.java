@@ -74,4 +74,60 @@ public class HistogramOperations {
     private static int scaleValue(int value, int min, int max) {
         return (int) ((value - min) / (double) (max - min) * 255);
     }
+
+    public static BufferedImage equalizeHistogram(BufferedImage original) {
+        BufferedImage result = ImageTransforms.copyImage(original);
+
+        int[] redHist = new int[256];
+        int[] greenHist = new int[256];
+        int[] blueHist = new int[256];
+
+        for (int y = 0; y < original.getHeight(); y++) {
+            for (int x = 0; x < original.getWidth(); x++) {
+                Color color = new Color(original.getRGB(x, y));
+                redHist[color.getRed()]++;
+                greenHist[color.getGreen()]++;
+                blueHist[color.getBlue()]++;
+            }
+        }
+
+        int[] redCDF = calculateCDF(redHist, original.getWidth() * original.getHeight());
+        int[] greenCDF = calculateCDF(greenHist, original.getWidth() * original.getHeight());
+        int[] blueCDF = calculateCDF(blueHist, original.getWidth() * original.getHeight());
+
+        for (int y = 0; y < result.getHeight(); y++) {
+            for (int x = 0; x < result.getWidth(); x++) {
+                Color color = new Color(result.getRGB(x, y));
+                int r = redCDF[color.getRed()];
+                int g = greenCDF[color.getGreen()];
+                int b = blueCDF[color.getBlue()];
+                result.setRGB(x, y, new Color(r, g, b).getRGB());
+            }
+        }
+
+        return result;
+    }
+
+    private static int[] calculateCDF(int[] hist, int totalPixels) {
+        int[] cdf = new int[256];
+        cdf[0] = hist[0];
+
+        for (int i = 1; i < 256; i++) {
+            cdf[i] = cdf[i - 1] + hist[i];
+        }
+
+        int cdfMin = 0;
+        for (int i = 0; i < 256; i++) {
+            if (cdf[i] > 0) {
+                cdfMin = cdf[i];
+                break;
+            }
+        }
+
+        for (int i = 0; i < 256; i++) {
+            cdf[i] = (int)(((cdf[i] - cdfMin) / (double)(totalPixels - cdfMin)) * 255);
+        }
+
+        return cdf;
+    }
 }
