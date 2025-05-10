@@ -5,5 +5,7 @@ import java.awt.image.BufferedImage;
 import java.util.Arrays;
 
 public class HistogramOperations {
+    public static BufferedImage generateHistogram(BufferedImage original) {
 
+    }
 }
