@@ -130,4 +130,42 @@ public class HistogramOperations {
 
         return cdf;
     }
+
+    public static BufferedImage scaleHistogram(BufferedImage original) {
+        int[] redHist = new int[256];
+        int[] greenHist = new int[256];
+        int[] blueHist = new int[256];
+
+        for (int y = 0; y < original.getHeight(); y++) {
+            for (int x = 0; x < original.getWidth(); x++) {
+                Color color = new Color(original.getRGB(x, y));
+                redHist[color.getRed()]++;
+                greenHist[color.getGreen()]++;
+                blueHist[color.getBlue()]++;
+            }
+        }
+
+        int redMin = findHistogramMin(redHist);
+        int redMax = findHistogramMax(redHist);
+        int greenMin = findHistogramMin(greenHist);
+        int greenMax = findHistogramMax(greenHist);
+        int blueMin = findHistogramMin(blueHist);
+        int blueMax = findHistogramMax(blueHist);
+
+        BufferedImage result = new BufferedImage(
+                original.getWidth(), original.getHeight(), original.getType());
+
+        for (int y = 0; y < original.getHeight(); y++) {
+            for (int x = 0; x < original.getWidth(); x++) {
+                Color color = new Color(original.getRGB(x, y));
+
+                int r = scaleValue(color.getRed(), redMin, redMax);
+                int g = scaleValue(color.getGreen(), greenMin, greenMax);
+                int b = scaleValue(color.getBlue(), blueMin, blueMax);
+
+                result.setRGB(x, y, new Color(r, g, b).getRGB());
+            }
+        }
+        return result;
+    }
 }
