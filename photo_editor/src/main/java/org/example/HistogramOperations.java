@@ -70,4 +70,8 @@ public class HistogramOperations {
         }
         return 255;
     }
+
+    private static int scaleValue(int value, int min, int max) {
+        return (int) ((value - min) / (double) (max - min) * 255);
+    }
 }
