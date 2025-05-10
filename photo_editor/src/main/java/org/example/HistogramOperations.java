@@ -48,7 +48,7 @@ public class HistogramOperations {
     private static void drawHistogram(Graphics2D g2d, int[] hist, int max,
                                       int xOffset, int width, int height) {
         for (int i = 0; i < width; i++) {
-            int value = (int)((double)hist[i] / max * height);
+            int value = (int) ((double) hist[i] / max * height);
             g2d.drawLine(i + xOffset, height, i + xOffset, height - value);
         }
     }
@@ -125,7 +125,7 @@ public class HistogramOperations {
         }
 
         for (int i = 0; i < 256; i++) {
-            cdf[i] = (int)(((cdf[i] - cdfMin) / (double)(totalPixels - cdfMin)) * 255);
+            cdf[i] = (int) (((cdf[i] - cdfMin) / (double) (totalPixels - cdfMin)) * 255);
         }
 
         return cdf;
