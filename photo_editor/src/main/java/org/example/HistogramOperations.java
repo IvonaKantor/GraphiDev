@@ -52,4 +52,22 @@ public class HistogramOperations {
             g2d.drawLine(i + xOffset, height, i + xOffset, height - value);
         }
     }
+
+    private static int findHistogramMin(int[] histogram) {
+        for (int i = 0; i < histogram.length; i++) {
+            if (histogram[i] > 0) {
+                return i;
+            }
+        }
+        return 0;
+    }
+
+    private static int findHistogramMax(int[] histogram) {
+        for (int i = histogram.length - 1; i >= 0; i--) {
+            if (histogram[i] > 0) {
+                return i;
+            }
+        }
+        return 255;
+    }
 }
