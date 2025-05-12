@@ -19,6 +19,21 @@ public class ImageTransforms {
         return result;
     }
 
+    public static BufferedImage negative(BufferedImage original) {
+        BufferedImage result = copyImage(original);
+
+        for (int y = 0; y < result.getHeight(); y++) {
+            for (int x = 0; x < result.getWidth(); x++) {
+                Color color = new Color(result.getRGB(x, y));
+                result.setRGB(x, y, new Color(
+                        255 - color.getRed(),
+                        255 - color.getGreen(),
+                        255 - color.getBlue()
+                ).getRGB());
+            }
+        }
+        return result;
+    }
 
     public static BufferedImage powerTransform(BufferedImage original, double gamma) {
         BufferedImage result = copyImage(original);
