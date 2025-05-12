@@ -86,7 +86,35 @@ public class ImagePanel extends JPanel {
         repaint();
     }
 
+    public void setFirstImage(BufferedImage image) {
+        this.firstImage = image != null ? resize(image) : null;
+        resetView();
+    }
 
+    public void setSecondImage(BufferedImage image) {
+        this.secondImage = image != null ? resize(image) : null;
+        resetView();
+    }
+
+    private BufferedImage resize(BufferedImage original) {
+        int maxWidth = getWidth() / 2 - 20;
+        int maxHeight = getHeight() - 40;
+
+        double widthRatio = (double) maxWidth / original.getWidth();
+        double heightRatio = (double) maxHeight / original.getHeight();
+        double ratio = Math.min(widthRatio, heightRatio);
+
+        int newWidth = (int) (original.getWidth() * ratio);
+        int newHeight = (int) (original.getHeight() * ratio);
+
+        BufferedImage resized = new BufferedImage(newWidth, newHeight, original.getType());
+        Graphics2D g = resized.createGraphics();
+        g.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_BILINEAR);
+        g.drawImage(original, 0, 0, newWidth, newHeight, null);
+        g.dispose();
+
+        return resized;
+    }
 
     public BufferedImage getFirstImage() {
         return firstImage;
