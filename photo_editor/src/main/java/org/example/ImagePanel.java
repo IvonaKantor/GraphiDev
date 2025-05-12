@@ -46,4 +46,104 @@ public class ImagePanel extends JPanel {
         });
     }
 
+    private void selectImageAtPoint(Point point) {
+        if (firstImage == null && secondImage == null) return;
+
+        int width = getWidth();
+        int gap = 20;
+
+        if (firstImage != null && secondImage != null) {
+            int img1Width = (int) (firstImage.getWidth() * scale);
+            int totalWidth = img1Width + gap + (int) (secondImage.getWidth() * scale);
+            int startX = (width - totalWidth) / 2 + offsetX;
+
+            if (point.x >= startX && point.x < startX + img1Width) {
+                selectedImage = 1;
+            } else if (point.x >= startX + img1Width + gap) {
+                selectedImage = 2;
+            }
+        } else if (firstImage != null) {
+            selectedImage = 1;
+        } else {
+            selectedImage = 2;
+        }
+    }
+
+    public BufferedImage getSelectedImage() {
+        return selectedImage == 1 ? firstImage : secondImage;
+    }
+
+    public int getSelectedImageNumber() {
+        return selectedImage;
+    }
+
+    public void setSelectedImage(BufferedImage image) {
+        if (selectedImage == 1) {
+            setFirstImage(image);
+        } else {
+            setSecondImage(image);
+        }
+        repaint();
+    }
+
+
+
+    public BufferedImage getFirstImage() {
+        return firstImage;
+    }
+
+    public BufferedImage getSecondImage() {
+        return secondImage;
+    }
+
+    public void resetView() {
+        scale = 1.0;
+        offsetX = 0;
+        offsetY = 0;
+        repaint();
+    }
+
+    @Override
+    protected void paintComponent(Graphics g) {
+        super.paintComponent(g);
+        Graphics2D g2d = (Graphics2D) g;
+
+        if (firstImage != null || secondImage != null) {
+            int width = getWidth();
+            int height = getHeight();
+            int gap = 20;
+
+            if (firstImage != null && secondImage != null) {
+                int img1Width = (int) (firstImage.getWidth() * scale);
+                int img1Height = (int) (firstImage.getHeight() * scale);
+                int img2Width = (int) (secondImage.getWidth() * scale);
+                int img2Height = (int) (secondImage.getHeight() * scale);
+
+                int totalWidth = img1Width + gap + img2Width;
+                int maxHeight = Math.max(img1Height, img2Height);
+
+                int x = (width - totalWidth) / 2 + offsetX;
+                int y = (height - maxHeight) / 2 + offsetY;
+
+                g2d.drawImage(firstImage, x, y, img1Width, img1Height, this);
+                g2d.drawImage(secondImage, x + img1Width + gap, y, img2Width, img2Height, this);
+
+                g2d.setColor(Color.RED);
+                g2d.drawRect(x, y, img1Width, img1Height);
+                g2d.drawRect(x + img1Width + gap, y, img2Width, img2Height);
+            } else {
+                BufferedImage img = firstImage != null ? firstImage : secondImage;
+                int imgWidth = (int) (img.getWidth() * scale);
+                int imgHeight = (int) (img.getHeight() * scale);
+
+                int x = (width - imgWidth) / 2 + offsetX;
+                int y = (height - imgHeight) / 2 + offsetY;
+
+                g2d.drawImage(img, x, y, imgWidth, imgHeight, this);
+
+                g2d.setColor(Color.RED);
+                g2d.drawRect(x, y, imgWidth, imgHeight);
+            }
+        }
+    }
 }
