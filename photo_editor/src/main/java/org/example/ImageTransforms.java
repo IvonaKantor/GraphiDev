@@ -10,9 +10,9 @@ public class ImageTransforms {
         for (int y = 0; y < result.getHeight(); y++) {
             for (int x = 0; x < result.getWidth(); x++) {
                 Color color = new Color(result.getRGB(x, y));
-                int r = clamp((int)(color.getRed() * factor));
-                int g = clamp((int)(color.getGreen() * factor));
-                int b = clamp((int)(color.getBlue() * factor));
+                int r = clamp((int) (color.getRed() * factor));
+                int g = clamp((int) (color.getGreen() * factor));
+                int b = clamp((int) (color.getBlue() * factor));
                 result.setRGB(x, y, new Color(r, g, b).getRGB());
             }
         }
@@ -45,9 +45,9 @@ public class ImageTransforms {
                 double normalizedG = color.getGreen() / 255.0;
                 double normalizedB = color.getBlue() / 255.0;
 
-                int r = (int)(255 * Math.pow(normalizedR, gamma));
-                int g = (int)(255 * Math.pow(normalizedG, gamma));
-                int b = (int)(255 * Math.pow(normalizedB, gamma));
+                int r = (int) (255 * Math.pow(normalizedR, gamma));
+                int g = (int) (255 * Math.pow(normalizedG, gamma));
+                int b = (int) (255 * Math.pow(normalizedB, gamma));
 
                 result.setRGB(x, y, new Color(clamp(r), clamp(g), clamp(b)).getRGB());
             }
@@ -182,9 +182,9 @@ public class ImageTransforms {
                         break;
                 }
 
-                int red = clamp((int)(r * 255));
-                int green = clamp((int)(g * 255));
-                int blue = clamp((int)(b * 255));
+                int red = clamp((int) (r * 255));
+                int green = clamp((int) (g * 255));
+                int blue = clamp((int) (b * 255));
 
                 result.setRGB(x, y, new Color(red, green, blue).getRGB());
             }
@@ -199,9 +199,9 @@ public class ImageTransforms {
         for (int y = 0; y < result.getHeight(); y++) {
             for (int x = 0; x < result.getWidth(); x++) {
                 Color color = new Color(result.getRGB(x, y));
-                int r = clamp((int)(factor * (color.getRed() - 128) + 128));
-                int g = clamp((int)(factor * (color.getGreen() - 128) + 128));
-                int b = clamp((int)(factor * (color.getBlue() - 128) + 128));
+                int r = clamp((int) (factor * (color.getRed() - 128) + 128));
+                int g = clamp((int) (factor * (color.getGreen() - 128) + 128));
+                int b = clamp((int) (factor * (color.getBlue() - 128) + 128));
                 result.setRGB(x, y, new Color(r, g, b).getRGB());
             }
         }
