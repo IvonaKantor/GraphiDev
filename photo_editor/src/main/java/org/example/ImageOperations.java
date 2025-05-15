@@ -251,4 +251,11 @@ public class ImageOperations {
     private void showError(String message) {
         JOptionPane.showMessageDialog(null, message, "Error", JOptionPane.ERROR_MESSAGE);
     }
+
+    public void resetImage(ImagePanel panel) {
+        BufferedImage original = panel.getOriginalImage();
+        if (original != null) {
+            panel.setSelectedImage(original);
+        }
+    }
 }
