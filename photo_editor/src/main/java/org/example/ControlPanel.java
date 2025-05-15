@@ -8,6 +8,7 @@ public class ControlPanel extends JPanel {
     private final JSlider parameterSlider;
     private final JComboBox<String> blendModeCombo;
     private final JSlider alphaSlider;
+    private final JButton resetImageButton = new JButton("Reset Image");
 
     public ControlPanel(ImageOperations operations, ImagePanel imagePanel) {
 
@@ -53,6 +54,7 @@ public class ControlPanel extends JPanel {
         add(saveFirstButton);
         add(saveSecondButton);
         add(blendButton);
+        add(resetImageButton);
         add(new JSeparator(SwingConstants.VERTICAL));
 
         add(new JLabel("Operation:"));
@@ -106,6 +108,10 @@ public class ControlPanel extends JPanel {
         blendModeCombo.addActionListener(e -> {
             alphaSlider.setVisible(blendModeCombo.getSelectedIndex() == 0 ||
                     blendModeCombo.getSelectedIndex() == 15);
+        });
+
+        resetImageButton.addActionListener(e -> {
+            operations.resetImage(imagePanel);
         });
     }
 
