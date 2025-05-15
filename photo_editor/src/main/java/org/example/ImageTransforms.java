@@ -208,7 +208,7 @@ public class ImageTransforms {
         return result;
     }
 
-    static BufferedImage copyImage(BufferedImage source) {
+    public static BufferedImage copyImage(BufferedImage source) {
         BufferedImage image = new BufferedImage(
                 source.getWidth(), source.getHeight(), source.getType());
         Graphics g = image.getGraphics();
