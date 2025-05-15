@@ -89,15 +89,29 @@ public class ImagePanel extends JPanel {
     }
 
     public void setFirstImage(BufferedImage image) {
-        this.firstImageOriginal = image != null ? ImageTransforms.copyImage(image) : null;
+        this.firstImageOriginal = image != null ? deepCopy(image) : null;
         this.firstImage = image != null ? resize(image) : null;
         resetView();
     }
 
     public void setSecondImage(BufferedImage image) {
-        this.secondImageOriginal = image != null ? ImageTransforms.copyImage(image) : null;
+        this.secondImageOriginal = image != null ? deepCopy(image) : null;
         this.secondImage = image != null ? resize(image) : null;
         resetView();
+    }
+
+    private BufferedImage deepCopy(BufferedImage source) {
+        if (source == null) return null;
+        return ImageTransforms.copyImage(source);
+    }
+
+    public void resetCurrentImage() {
+        if (selectedImage == 1 && firstImageOriginal != null) {
+            firstImage = resize(firstImageOriginal);
+        } else if (selectedImage == 2 && secondImageOriginal != null) {
+            secondImage = resize(secondImageOriginal);
+        }
+        repaint();
     }
 
     public BufferedImage getOriginalImage() {
