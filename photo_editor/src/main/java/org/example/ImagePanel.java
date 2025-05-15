@@ -8,6 +8,8 @@ import java.awt.image.BufferedImage;
 public class ImagePanel extends JPanel {
     private BufferedImage firstImage;
     private BufferedImage secondImage;
+    private BufferedImage firstImageOriginal;
+    private BufferedImage secondImageOriginal;
     private double scale = 1.0;
     private int offsetX = 0;
     private int offsetY = 0;
@@ -87,13 +89,19 @@ public class ImagePanel extends JPanel {
     }
 
     public void setFirstImage(BufferedImage image) {
+        this.firstImageOriginal = image != null ? ImageTransforms.copyImage(image) : null;
         this.firstImage = image != null ? resize(image) : null;
         resetView();
     }
 
     public void setSecondImage(BufferedImage image) {
+        this.secondImageOriginal = image != null ? ImageTransforms.copyImage(image) : null;
         this.secondImage = image != null ? resize(image) : null;
         resetView();
+    }
+
+    public BufferedImage getOriginalImage() {
+        return selectedImage == 1 ? firstImageOriginal : secondImageOriginal;
     }
 
     private BufferedImage resize(BufferedImage original) {
