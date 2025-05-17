@@ -36,5 +36,23 @@ public class NewBehaviourScript : MonoBehaviour
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
+        if (this.CompareTag("Cube") && other.CompareTag("Cube"))
+        {
+            foreach (Activator button in FindObjectsOfType<Activator>())
+            {
+                button.canPush = false;
+            }
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (this.CompareTag("Cube") && other.CompareTag("Cube"))
+        {
+            foreach (Activator button in FindObjectsOfType<Activator>())
+            {
+                button.canPush = true;
+            }
+        }
     }
 }
