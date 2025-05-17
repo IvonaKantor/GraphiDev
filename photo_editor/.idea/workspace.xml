@@ -1,0 +1,597 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="58ae96e2-8d2a-43fc-b063-f33236efbb31" name="Changes" comment="updating">
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ImageManager.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;IvonaKantor&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/IvonaKantor/GraphiDev.git&quot;,
+    &quot;accountId&quot;: &quot;65c1205a-824b-44be-bb93-47d60af98cfb&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
+  <component name="ProjectId" id="2vatkMrkeVEuFSMNOCIZfurGq5B" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.App.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ImageProcessor.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ImageProcessorApp.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/github/GraphiDev/photo_editor/target&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;D:/github/GraphiDev/photo_editor/src/main/java/org/example/Main.java&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\github\GraphiDev\photo_editor\target" />
+      <recent name="D:\github\GraphiDev\photo_editor\src" />
+      <recent name="D:\github\GraphiDev\photo_editor\src\main" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\github\GraphiDev\photo_editor\src\main\java\org\example" />
+      <recent name="D:\github\GraphiDev\photo_editor\src\main\java\org\example\view" />
+      <recent name="D:\github\GraphiDev\photo_editor\src\main\java" />
+      <recent name="D:\github\GraphiDev\photo_editor\src\main" />
+      <recent name="D:\github\GraphiDev\photo_editor" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.App">
+    <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.App" />
+      <module name="photo_editor" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ImageProcessor" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ImageProcessor" />
+      <module name="photo_editor" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.Main" />
+      <module name="photo_editor" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.operations.transformations.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.App" />
+        <item itemvalue="Application.ImageProcessor" />
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-fbdcb00ec9e3-intellij.indexing.shared.core-IU-251.25410.109" />
+        <option value="bundled-js-predefined-d6986cc7102b-6a121458b545-JavaScript-IU-251.25410.109" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="58ae96e2-8d2a-43fc-b063-f33236efbb31" name="Changes" comment="" />
+      <created>1744395158356</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1744395158356</updated>
+      <workItem from="1744395159745" duration="626000" />
+      <workItem from="1744413867155" duration="1248000" />
+      <workItem from="1744449295006" duration="16215000" />
+      <workItem from="1744493683780" duration="24000" />
+      <workItem from="1744539451348" duration="289000" />
+      <workItem from="1744663036039" duration="1629000" />
+      <workItem from="1744718231354" duration="6000" />
+      <workItem from="1744925302860" duration="69000" />
+      <workItem from="1745010820638" duration="502000" />
+      <workItem from="1745349015640" duration="1451000" />
+      <workItem from="1745431678822" duration="5076000" />
+      <workItem from="1745506786967" duration="11937000" />
+      <workItem from="1745571937189" duration="2627000" />
+      <workItem from="1745580856285" duration="1719000" />
+      <workItem from="1745592011015" duration="12704000" />
+      <workItem from="1745664914980" duration="9775000" />
+      <workItem from="1745782692612" duration="363000" />
+      <workItem from="1745937544059" duration="12942000" />
+      <workItem from="1746003135589" duration="9729000" />
+      <workItem from="1746030916879" duration="2759000" />
+      <workItem from="1746098073401" duration="13000" />
+      <workItem from="1746120145987" duration="79000" />
+      <workItem from="1746220204205" duration="1421000" />
+      <workItem from="1746392199150" duration="8262000" />
+      <workItem from="1746437714349" duration="7078000" />
+      <workItem from="1746460774078" duration="4442000" />
+      <workItem from="1746553065110" duration="155000" />
+      <workItem from="1746739170729" duration="1236000" />
+      <workItem from="1746781223485" duration="129000" />
+      <workItem from="1746783863046" duration="10126000" />
+      <workItem from="1746884073971" duration="885000" />
+      <workItem from="1747069192316" duration="1407000" />
+      <workItem from="1747321054050" duration="1982000" />
+    </task>
+    <task id="LOCAL-00053" summary="completed version of app class">
+      <option name="closed" value="true" />
+      <created>1746392643612</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1746392643613</updated>
+    </task>
+    <task id="LOCAL-00054" summary="added a methode for opening images">
+      <option name="closed" value="true" />
+      <created>1746394412443</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1746394412443</updated>
+    </task>
+    <task id="LOCAL-00055" summary="added a methode for showing errors">
+      <option name="closed" value="true" />
+      <created>1746395514874</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1746395514874</updated>
+    </task>
+    <task id="LOCAL-00056" summary="added a methode for blending images">
+      <option name="closed" value="true" />
+      <created>1746478012991</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1746478012991</updated>
+    </task>
+    <task id="LOCAL-00057" summary="updating">
+      <option name="closed" value="true" />
+      <created>1746478066037</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1746478066037</updated>
+    </task>
+    <task id="LOCAL-00058" summary="added a methode for blur images">
+      <option name="closed" value="true" />
+      <created>1746478225931</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1746478225931</updated>
+    </task>
+    <task id="LOCAL-00059" summary="completed version of methode to blur images">
+      <option name="closed" value="true" />
+      <created>1746478282753</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1746478282753</updated>
+    </task>
+    <task id="LOCAL-00060" summary="updating">
+      <option name="closed" value="true" />
+      <created>1746740834957</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1746740834958</updated>
+    </task>
+    <task id="LOCAL-00061" summary="added a menu of possible operations">
+      <option name="closed" value="true" />
+      <created>1746794775416</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1746794775416</updated>
+    </task>
+    <task id="LOCAL-00062" summary="added a methode to blur an image">
+      <option name="closed" value="true" />
+      <created>1746794837396</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1746794837396</updated>
+    </task>
+    <task id="LOCAL-00063" summary="added sepia methode">
+      <option name="closed" value="true" />
+      <created>1746794894205</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1746794894206</updated>
+    </task>
+    <task id="LOCAL-00064" summary="added threshold methode">
+      <option name="closed" value="true" />
+      <created>1746794951618</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1746794951618</updated>
+    </task>
+    <task id="LOCAL-00065" summary="added a methode for applying convolution filter">
+      <option name="closed" value="true" />
+      <created>1746795019012</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1746795019012</updated>
+    </task>
+    <task id="LOCAL-00066" summary="added a methode for calculating edges with a mask">
+      <option name="closed" value="true" />
+      <created>1746795099298</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1746795099298</updated>
+    </task>
+    <task id="LOCAL-00067" summary="added a methode for using a convolution filter with a matrix mask">
+      <option name="closed" value="true" />
+      <created>1746795174939</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1746795174943</updated>
+    </task>
+    <task id="LOCAL-00068" summary="added a methode for contrast adjusting">
+      <option name="closed" value="true" />
+      <created>1746795280888</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1746795280888</updated>
+    </task>
+    <task id="LOCAL-00069" summary="added methode for negative a picture">
+      <option name="closed" value="true" />
+      <created>1746795359618</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1746795359618</updated>
+    </task>
+    <task id="LOCAL-00070" summary="added methode for brightening a picture">
+      <option name="closed" value="true" />
+      <created>1746795390081</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1746795390081</updated>
+    </task>
+    <task id="LOCAL-00071" summary="added control panel with all operations and parameters settings">
+      <option name="closed" value="true" />
+      <created>1746797558827</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1746797558827</updated>
+    </task>
+    <task id="LOCAL-00072" summary="added class for using different filters">
+      <option name="closed" value="true" />
+      <created>1746798319885</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1746798319885</updated>
+    </task>
+    <task id="LOCAL-00073" summary="added a methode for using median filter">
+      <option name="closed" value="true" />
+      <created>1746798392883</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1746798392883</updated>
+    </task>
+    <task id="LOCAL-00074" summary="added a methods for using minimum and maximum filters">
+      <option name="closed" value="true" />
+      <created>1746798497375</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1746798497375</updated>
+    </task>
+    <task id="LOCAL-00075" summary="added a methode for applying Laplace filter">
+      <option name="closed" value="true" />
+      <created>1746798593380</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1746798593380</updated>
+    </task>
+    <task id="LOCAL-00076" summary="added a methods for applying Roberts, Prewitt and Sobel filters">
+      <option name="closed" value="true" />
+      <created>1746799268841</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1746799268841</updated>
+    </task>
+    <task id="LOCAL-00077" summary="added a methode for applying low pass filter">
+      <option name="closed" value="true" />
+      <created>1746799470560</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1746799470560</updated>
+    </task>
+    <task id="LOCAL-00078" summary="added a class for creating histogram and for making some operations with">
+      <option name="closed" value="true" />
+      <created>1746884162129</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1746884162129</updated>
+    </task>
+    <task id="LOCAL-00079" summary="added a methode for generating a histogram">
+      <option name="closed" value="true" />
+      <created>1746884296685</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1746884296685</updated>
+    </task>
+    <task id="LOCAL-00080" summary="added arrays  for each color">
+      <option name="closed" value="true" />
+      <created>1746884352575</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1746884352575</updated>
+    </task>
+    <task id="LOCAL-00081" summary="calculating frequency of each color in the image">
+      <option name="closed" value="true" />
+      <created>1746884415435</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1746884415435</updated>
+    </task>
+    <task id="LOCAL-00082" summary="calculating frequency of each color in the image">
+      <option name="closed" value="true" />
+      <created>1746884456456</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1746884456456</updated>
+    </task>
+    <task id="LOCAL-00083" summary="added a methode for drawing the histogram">
+      <option name="closed" value="true" />
+      <created>1746884524119</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1746884524119</updated>
+    </task>
+    <task id="LOCAL-00084" summary="added methods for finding out the highest and the lowest values of the histogram">
+      <option name="closed" value="true" />
+      <created>1746884644342</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1746884644342</updated>
+    </task>
+    <task id="LOCAL-00085" summary="added methode for scaling the histogram">
+      <option name="closed" value="true" />
+      <created>1746884697727</created>
+      <option name="number" value="00085" />
+      <option name="presentableId" value="LOCAL-00085" />
+      <option name="project" value="LOCAL" />
+      <updated>1746884697727</updated>
+    </task>
+    <task id="LOCAL-00086" summary="added methode to equalize the histogram">
+      <option name="closed" value="true" />
+      <created>1746884791911</created>
+      <option name="number" value="00086" />
+      <option name="presentableId" value="LOCAL-00086" />
+      <option name="project" value="LOCAL" />
+      <updated>1746884791913</updated>
+    </task>
+    <task id="LOCAL-00087" summary="added methode to scale the histogram">
+      <option name="closed" value="true" />
+      <created>1746884844521</created>
+      <option name="number" value="00087" />
+      <option name="presentableId" value="LOCAL-00087" />
+      <option name="project" value="LOCAL" />
+      <updated>1746884844521</updated>
+    </task>
+    <task id="LOCAL-00088" summary="completed class for drawing a histogram and making operations">
+      <option name="closed" value="true" />
+      <created>1746884912823</created>
+      <option name="number" value="00088" />
+      <option name="presentableId" value="LOCAL-00088" />
+      <option name="project" value="LOCAL" />
+      <updated>1746884912823</updated>
+    </task>
+    <task id="LOCAL-00089" summary="added image panel class">
+      <option name="closed" value="true" />
+      <created>1747070206488</created>
+      <option name="number" value="00089" />
+      <option name="presentableId" value="LOCAL-00089" />
+      <option name="project" value="LOCAL" />
+      <updated>1747070206488</updated>
+    </task>
+    <task id="LOCAL-00090" summary="added control of mouse position and listeners">
+      <option name="closed" value="true" />
+      <created>1747070332604</created>
+      <option name="number" value="00090" />
+      <option name="presentableId" value="LOCAL-00090" />
+      <option name="project" value="LOCAL" />
+      <updated>1747070332604</updated>
+    </task>
+    <task id="LOCAL-00091" summary="added methods for choosing an image and painting">
+      <option name="closed" value="true" />
+      <created>1747070424282</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1747070424282</updated>
+    </task>
+    <task id="LOCAL-00092" summary="added methode for resizing second loaded image">
+      <option name="closed" value="true" />
+      <created>1747070483798</created>
+      <option name="number" value="00092" />
+      <option name="presentableId" value="LOCAL-00092" />
+      <option name="project" value="LOCAL" />
+      <updated>1747070483798</updated>
+    </task>
+    <task id="LOCAL-00093" summary="added class for tranform images">
+      <option name="closed" value="true" />
+      <created>1747070638176</created>
+      <option name="number" value="00093" />
+      <option name="presentableId" value="LOCAL-00093" />
+      <option name="project" value="LOCAL" />
+      <updated>1747070638176</updated>
+    </task>
+    <task id="LOCAL-00094" summary="added a methode for negative images">
+      <option name="closed" value="true" />
+      <created>1747070672013</created>
+      <option name="number" value="00094" />
+      <option name="presentableId" value="LOCAL-00094" />
+      <option name="project" value="LOCAL" />
+      <updated>1747070672013</updated>
+    </task>
+    <task id="LOCAL-00095" summary="added a methode for blending 2 images">
+      <option name="closed" value="true" />
+      <created>1747070698764</created>
+      <option name="number" value="00095" />
+      <option name="presentableId" value="LOCAL-00095" />
+      <option name="project" value="LOCAL" />
+      <updated>1747070698764</updated>
+    </task>
+    <task id="LOCAL-00096" summary="added a methode for blending 2 images with a blend mode">
+      <option name="closed" value="true" />
+      <created>1747070806984</created>
+      <option name="number" value="00096" />
+      <option name="presentableId" value="LOCAL-00096" />
+      <option name="project" value="LOCAL" />
+      <updated>1747070806984</updated>
+    </task>
+    <task id="LOCAL-00097" summary="added a button to reset image to original">
+      <option name="closed" value="true" />
+      <created>1747323151902</created>
+      <option name="number" value="00097" />
+      <option name="presentableId" value="LOCAL-00097" />
+      <option name="project" value="LOCAL" />
+      <updated>1747323151902</updated>
+    </task>
+    <task id="LOCAL-00098" summary="added a methode to reset image to original">
+      <option name="closed" value="true" />
+      <created>1747323279758</created>
+      <option name="number" value="00098" />
+      <option name="presentableId" value="LOCAL-00098" />
+      <option name="project" value="LOCAL" />
+      <updated>1747323279758</updated>
+    </task>
+    <task id="LOCAL-00099" summary="added a methode to reset image to original">
+      <option name="closed" value="true" />
+      <created>1747323538040</created>
+      <option name="number" value="00099" />
+      <option name="presentableId" value="LOCAL-00099" />
+      <option name="project" value="LOCAL" />
+      <updated>1747323538040</updated>
+    </task>
+    <task id="LOCAL-00100" summary="updating">
+      <option name="closed" value="true" />
+      <created>1747323624502</created>
+      <option name="number" value="00100" />
+      <option name="presentableId" value="LOCAL-00100" />
+      <option name="project" value="LOCAL" />
+      <updated>1747323624502</updated>
+    </task>
+    <task id="LOCAL-00101" summary="updating">
+      <option name="closed" value="true" />
+      <created>1747324208328</created>
+      <option name="number" value="00101" />
+      <option name="presentableId" value="LOCAL-00101" />
+      <option name="project" value="LOCAL" />
+      <updated>1747324208328</updated>
+    </task>
+    <option name="localTasksCounter" value="102" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="added a methods for using minimum and maximum filters" />
+    <MESSAGE value="added a methode for applying Laplace filter" />
+    <MESSAGE value="added a methods for applying Roberts, Prewitt and Sobel filters" />
+    <MESSAGE value="added a methode for applying low pass filter" />
+    <MESSAGE value="added a class for creating histogram and for making some operations with" />
+    <MESSAGE value="added a methode for generating a histogram" />
+    <MESSAGE value="added arrays  for each color" />
+    <MESSAGE value="calculating frequency of each color in the image" />
+    <MESSAGE value="added a methode for drawing the histogram" />
+    <MESSAGE value="added methods for finding out the highest and the lowest values of the histogram" />
+    <MESSAGE value="added methode for scaling the histogram" />
+    <MESSAGE value="added methode to equalize the histogram" />
+    <MESSAGE value="added methode to scale the histogram" />
+    <MESSAGE value="completed class for drawing a histogram and making operations" />
+    <MESSAGE value="added image panel class" />
+    <MESSAGE value="added control of mouse position and listeners" />
+    <MESSAGE value="added methods for choosing an image and painting" />
+    <MESSAGE value="added methode for resizing second loaded image" />
+    <MESSAGE value="added class for tranform images" />
+    <MESSAGE value="added a methode for negative images" />
+    <MESSAGE value="added a methode for blending 2 images" />
+    <MESSAGE value="added a methode for blending 2 images with a blend mode" />
+    <MESSAGE value="added a button to reset image to original" />
+    <MESSAGE value="added a methode to reset image to original" />
+    <MESSAGE value="updating" />
+    <option name="LAST_COMMIT_MESSAGE" value="updating" />
+  </component>
+</project>
