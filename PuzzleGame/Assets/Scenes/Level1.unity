@@ -1542,6 +1542,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cube (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 7143249659401032595, guid: 6d18ad74b1258804ba7b507d61829d14, type: 3}
+      propertyPath: keyOne
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 7143249659401032595, guid: 6d18ad74b1258804ba7b507d61829d14, type: 3}
+      propertyPath: keyTwo
+      value: 97
+      objectReference: {fileID: 0}
     - target: {fileID: 8553530276106388747, guid: 6d18ad74b1258804ba7b507d61829d14, type: 3}
       propertyPath: m_Constraints
       value: 114
