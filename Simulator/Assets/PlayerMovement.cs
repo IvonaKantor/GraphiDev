@@ -18,10 +18,12 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         horizontalInput = Input.GetAxis("Horizontal");
+        print(horizontalInput);
     }
 
     private void FixedUpdate() 
     {
-        rb.linearVelocity = transform.forward * speed;
+        rb.velocity = transform.forward * speed;
+        rb.angularVelocity = new Vector3(0, 3, 0);
     }
 }
