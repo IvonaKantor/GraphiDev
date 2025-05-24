@@ -25,6 +25,6 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate() 
     {
         rb.velocity = transform.forward * speed;
-        rb.angularVelocity = new Vector3(0, 3, 0);
+        rb.angularVelocity = new Vector3(0, rotationSpeed, 0);
     }
 }
