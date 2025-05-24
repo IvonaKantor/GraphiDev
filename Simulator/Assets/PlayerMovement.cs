@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
 
     public Rigidbody rb;
     public float speed;
+    public float rotationSpeed;
     public float horizontalInput;
 
     void Start()
