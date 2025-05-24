@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="58ae96e2-8d2a-43fc-b063-f33236efbb31" name="Changes" comment="updating">
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ImageManager.java" beforeDir="false" />
-    </list>
+    <list default="true" id="58ae96e2-8d2a-43fc-b063-f33236efbb31" name="Changes" comment="updating" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -167,6 +165,7 @@
       <workItem from="1746884073971" duration="885000" />
       <workItem from="1747069192316" duration="1407000" />
       <workItem from="1747321054050" duration="1982000" />
+      <workItem from="1747520621960" duration="6000" />
     </task>
     <task id="LOCAL-00053" summary="completed version of app class">
       <option name="closed" value="true" />
