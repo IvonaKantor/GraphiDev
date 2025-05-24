@@ -1,12 +1,14 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
 
     public Rigidbody rb;
     public float speed;
+    public float horizontalInput;
 
     void Start()
     {
@@ -15,7 +17,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        
+        horizontalInput = Input.GetAxis("Horizontal");
     }
 
     private void FixedUpdate() 
