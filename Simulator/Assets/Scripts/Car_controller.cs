@@ -22,8 +22,31 @@ public class Car_controller : MonoBehaviour
         _colliderFR.motorTorgue = Input.GetAxis("Vertical") * _force;
 
         if (Input.GetKey(KeyCode.Space))
-        { 
-            
+        {
+            _colliderFL.brakeTorque = 3000f;
+            _colliderFR.brakeTorque = 3000f;
+            _colliderBL.brakeTorque = 3000f;
+            _colliderBR.brakeTorque = 3000f;
+
         }
+        else
+        {
+            _colliderFL.brakeTorque = 0f;
+            _colliderFR.brakeTorque = 0f;
+            _colliderBL.brakeTorque = 0f;
+            _colliderBR.brakeTorque = 0f;
+        }
+
+        _colliderFL.steerAngle = _maxAngle * Input.GetAxis("Horizontal");
+        _colliderFR.steerAngle = _maxAngle * Input.GetAxis("Horizontal");
+    }
+
+    private void RotateWhee(WheelCollider collider, Transform transform)
+    {
+        Vector3 position;
+        Quaternion rotation;
+
+        collider.GetWorldPose(out position, out position);
+
     }
 }
