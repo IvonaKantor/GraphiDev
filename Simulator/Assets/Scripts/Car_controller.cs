@@ -39,6 +39,11 @@ public class Car_controller : MonoBehaviour
 
         _colliderFL.steerAngle = _maxAngle * Input.GetAxis("Horizontal");
         _colliderFR.steerAngle = _maxAngle * Input.GetAxis("Horizontal");
+
+        RotateWheel(_colliderFL, _transformFL);
+        RotateWheel(_colliderFR, _transformFR);
+        RotateWheel(_colliderBL, _transformBL);
+        RotateWheel(_colliderBR, _transformBR);
     }
 
     private void RotateWhee(WheelCollider collider, Transform transform)
@@ -48,5 +53,8 @@ public class Car_controller : MonoBehaviour
 
         collider.GetWorldPose(out position, out position);
 
+
+        transform.rotation = rotation;
+        transform.position = position;
     }
 }
