@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="58ae96e2-8d2a-43fc-b063-f33236efbb31" name="Changes" comment="updating" />
+    <list default="true" id="58ae96e2-8d2a-43fc-b063-f33236efbb31" name="Changes" comment="updating">
+      <change beforePath="$PROJECT_DIR$/../Simulator/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/../Simulator/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -166,6 +169,8 @@
       <workItem from="1747069192316" duration="1407000" />
       <workItem from="1747321054050" duration="1982000" />
       <workItem from="1747520621960" duration="6000" />
+      <workItem from="1748986560486" duration="84000" />
+      <workItem from="1749186644985" duration="84000" />
     </task>
     <task id="LOCAL-00053" summary="completed version of app class">
       <option name="closed" value="true" />
