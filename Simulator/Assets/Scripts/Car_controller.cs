@@ -1,4 +1,6 @@
 using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 
 public class Car_controller : MonoBehaviour
 {
@@ -13,13 +15,13 @@ public class Car_controller : MonoBehaviour
     [SerializeField] private WheelCollider _colliderBL;
     [SerializeField] private WheelCollider _colliderBR;
 
-    [SezializeField] private float _force;
-    [SezializeField] private float _maxAngle;
+    [SerializeField] private float _force;
+    [SerializeField] private float _maxAngle;
 
     private void FixedUpdate()
     {
-        _colliderFL.motorTorgue = Input.GetAxis("Vertical") * _force;
-        _colliderFR.motorTorgue = Input.GetAxis("Vertical") * _force;
+        _colliderFL.motorTorque = Input.GetAxis("Vertical") * _force;
+        _colliderFR.motorTorque = Input.GetAxis("Vertical") * _force;
 
         if (Input.GetKey(KeyCode.Space))
         {
@@ -51,7 +53,7 @@ public class Car_controller : MonoBehaviour
         Vector3 position;
         Quaternion rotation;
 
-        collider.GetWorldPose(out position, out position);
+        collider.GetWorldPose(out position, out rotation);
 
 
         transform.rotation = rotation;
