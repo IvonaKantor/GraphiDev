@@ -111,13 +111,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1179434873205268629}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.42, y: -0.83, z: -3.47}
+  m_LocalRotation: {x: -0.23461004, y: 0.46180847, z: -0.064133555, w: 0.8529818}
+  m_LocalPosition: {x: 2, y: 0.11, z: -2.08}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 653759417367685984}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -19.938, y: 60.467, z: -20.297}
 --- !u!146 &959077815035122180
 WheelCollider:
   m_ObjectHideFlags: 0
@@ -171,7 +171,7 @@ GameObject:
   - component: {fileID: 5584440263550972515}
   m_Layer: 0
   m_Name: Ice Cream Car
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -190,7 +190,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2663875072076951290}
-  - {fileID: 8752699217679181265}
   - {fileID: 653759417367685984}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -262,8 +261,8 @@ MonoBehaviour:
   _colliderFR: {fileID: 7656186566128905650}
   _colliderBL: {fileID: 7567070324303188449}
   _colliderBR: {fileID: 959077815035122180}
-  _force: 0
-  _maxAngle: 0
+  _force: 2000
+  _maxAngle: 3
 --- !u!1 &1581661464282710184
 GameObject:
   m_ObjectHideFlags: 0
@@ -277,7 +276,7 @@ GameObject:
   - component: {fileID: 4507574253687821286}
   m_Layer: 0
   m_Name: Body
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -290,13 +289,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1581661464282710184}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.00000008146034, y: 0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalRotation: {x: 0.00000008136311, y: -0.048881825, z: 0.0000000039819117, w: 0.9988046}
+  m_LocalPosition: {x: 0.00000018273357, y: 0.01999998, z: 0}
   m_LocalScale: {x: 2.54, y: 2.54, z: 2.54}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 8752699217679181265}
   m_Father: {fileID: 1920894088946172715}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -5.604, z: 0}
 --- !u!33 &5610939705157438242
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -618,13 +618,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4773004703760981873}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.03, y: -1.06, z: 1.59}
+  m_LocalRotation: {x: 0.30670598, y: -0.27015972, z: 0.8894667, w: -0.20443651}
+  m_LocalPosition: {x: -0.25, y: 0.624, z: 2.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 653759417367685984}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 20.805, y: 44.574, z: 214.494}
 --- !u!146 &7656186566128905650
 WheelCollider:
   m_ObjectHideFlags: 0
@@ -867,7 +867,7 @@ GameObject:
   - component: {fileID: 8752699217679181265}
   m_Layer: 0
   m_Name: Wheels
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -880,14 +880,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8893622627997550334}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0.00000008146034, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.3937008, y: 0.3937008, z: 0.3937008}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 162282960082198254}
   - {fileID: 3631197571824195609}
   - {fileID: 7376700455497004405}
   - {fileID: 5752256457873040263}
-  m_Father: {fileID: 1920894088946172715}
+  m_Father: {fileID: 2663875072076951290}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
