@@ -46,7 +46,7 @@ public class Car_controller : MonoBehaviour
         RotateWheel(_colliderBR, _transformBR);
     }
 
-    private void RotateWhee(WheelCollider collider, Transform transform)
+    private void RotateWheel(WheelCollider collider, Transform transform)
     {
         Vector3 position;
         Quaternion rotation;
