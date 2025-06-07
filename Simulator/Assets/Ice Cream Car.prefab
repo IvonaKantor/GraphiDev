@@ -254,6 +254,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3a4cd016caa1724d9c79c95ebc2bfbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _transformFL: {fileID: 5752256457873040263}
+  _transformFR: {fileID: 7376700455497004405}
+  _transformBL: {fileID: 162282960082198254}
+  _transformBR: {fileID: 3631197571824195609}
+  _colliderFL: {fileID: 6689090064942523920}
+  _colliderFR: {fileID: 7656186566128905650}
+  _colliderBL: {fileID: 7567070324303188449}
+  _colliderBR: {fileID: 959077815035122180}
+  _force: 0
+  _maxAngle: 0
 --- !u!1 &1581661464282710184
 GameObject:
   m_ObjectHideFlags: 0
