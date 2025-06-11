@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -15,48 +15,101 @@ public class Car_controller : MonoBehaviour
     [SerializeField] private WheelCollider _colliderBL;
     [SerializeField] private WheelCollider _colliderBR;
 
-    [SerializeField] private float _force;
-    [SerializeField] private float _maxAngle;
+    [SerializeField] private float _motorForce = 1000f;
+    [SerializeField] private float _maxSteerAngle = 20f;
+    [SerializeField] private float _brakeForce = 1000f;
+    [SerializeField] private float _decelerationForce = 500f;
+    [SerializeField] private float _steerSmoothness = 1f;
+
+    private float currentSteerAngle;
+    private float currentMotorForce;
+    private bool isBraking;
 
     private void FixedUpdate()
     {
-        _colliderFL.motorTorque = Input.GetAxis("Vertical") * _force;
-        _colliderFR.motorTorque = Input.GetAxis("Vertical") * _force;
+        HandleMotor();
+        HandleSteering();
+        UpdateWheels();
+    }
 
-        if (Input.GetKey(KeyCode.Space))
+    private void HandleMotor()
+    {
+        float verticalInput = Input.GetAxis("Vertical");
+
+        if (verticalInput > 0)
         {
-            _colliderFL.brakeTorque = 3000f;
-            _colliderFR.brakeTorque = 3000f;
-            _colliderBL.brakeTorque = 3000f;
-            _colliderBR.brakeTorque = 3000f;
-
+            currentMotorForce = verticalInput * _motorForce;
+            isBraking = false;
+        }
+        else if (verticalInput < 0)
+        {
+            currentMotorForce = verticalInput * (_motorForce * 0.5f); 
+            isBraking = false;
         }
         else
         {
-            _colliderFL.brakeTorque = 0f;
-            _colliderFR.brakeTorque = 0f;
-            _colliderBL.brakeTorque = 0f;
-            _colliderBR.brakeTorque = 0f;
+            currentMotorForce = 0;
+            ApplyDeceleration(_decelerationForce);
         }
 
-        _colliderFL.steerAngle = _maxAngle * Input.GetAxis("Horizontal");
-        _colliderFR.steerAngle = _maxAngle * Input.GetAxis("Horizontal");
+        isBraking = Input.GetKey(KeyCode.Space);
 
-        RotateWheel(_colliderFL, _transformFL);
-        RotateWheel(_colliderFR, _transformFR);
-        RotateWheel(_colliderBL, _transformBL);
-        RotateWheel(_colliderBR, _transformBR);
+        _colliderFL.motorTorque = currentMotorForce;
+        _colliderFR.motorTorque = currentMotorForce;
+
+        ApplyBraking();
     }
 
-    private void RotateWheel(WheelCollider collider, Transform transform)
+    private void ApplyBraking()
     {
-        Vector3 position;
-        Quaternion rotation;
+        float brakeTorque = isBraking ? _brakeForce : 0f;
+        _colliderFL.brakeTorque = brakeTorque;
+        _colliderFR.brakeTorque = brakeTorque;
+        _colliderBL.brakeTorque = brakeTorque;
+        _colliderBR.brakeTorque = brakeTorque;
+    }
 
-        collider.GetWorldPose(out position, out rotation);
+    private void ApplyDeceleration(float force)
+    {
+        if (!isBraking && Mathf.Abs(GetComponent<Rigidbody>().linearVelocity.magnitude) > 0.1f)
+        {
+            _colliderFL.brakeTorque = force;
+            _colliderFR.brakeTorque = force;
+            _colliderBL.brakeTorque = force;
+            _colliderBR.brakeTorque = force;
+        }
+        else
+        {
+            _colliderFL.brakeTorque = 0;
+            _colliderFR.brakeTorque = 0;
+            _colliderBL.brakeTorque = 0;
+            _colliderBR.brakeTorque = 0;
+        }
+    }
 
+    private void HandleSteering()
+    {
+        float horizontalInput = Input.GetAxis("Horizontal");
+        float targetSteerAngle = _maxSteerAngle * horizontalInput;
 
-        transform.rotation = rotation;
+        currentSteerAngle = Mathf.Lerp(currentSteerAngle, targetSteerAngle, Time.fixedDeltaTime * _steerSmoothness);
+
+        _colliderFL.steerAngle = currentSteerAngle;
+        _colliderFR.steerAngle = currentSteerAngle;
+    }
+
+    private void UpdateWheels()
+    {
+        UpdateWheel(_colliderFL, _transformFL);
+        UpdateWheel(_colliderFR, _transformFR);
+        UpdateWheel(_colliderBL, _transformBL);
+        UpdateWheel(_colliderBR, _transformBR);
+    }
+
+    private void UpdateWheel(WheelCollider collider, Transform transform)
+    {
+        collider.GetWorldPose(out Vector3 position, out Quaternion rotation);
         transform.position = position;
+        transform.rotation = rotation;
     }
 }
